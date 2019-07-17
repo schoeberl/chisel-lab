@@ -29,3 +29,6 @@ For lab sessions where no link is given, we will provide the material in CampusN
  * week 1: [Lab 1: Hello World in Chisel](lab1)
 
 ## Resources
+
+ * [Basys3_Master.xdc](Basys3_Master.xdc) constraint file for pin definition and clock
+ * [IntelliJ for Scala](https://docs.scala-lang.org/getting-started-intellij-track/getting-started-with-scala-in-intellij.html)
