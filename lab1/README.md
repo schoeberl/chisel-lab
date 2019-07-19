@@ -106,7 +106,7 @@ the Basys3 board.
  * Click on *Generate Bitstream* at the bottom of the *Project Manager* to
    start synthesis, implementation, and bitstream generation
    * This process may take some time (minutes)
- * Configure your FPGA
+ * Configure your FPGA with *Program Device* under *Open Hardware Manager*
 
 You should now see an LED blinking at 1 Hz.
 
