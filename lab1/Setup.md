@@ -8,9 +8,8 @@ laptop. We also include pointers for the Windows setup.
 
 Chisel is *just* a library for Scala. And Scala is just a language that executes
 on the JVM. Therefore, you need a JVM installed on your laptop, which you probably
-have already.
-
-
+have already. For working on the command line you should also install
+[sbt](https://www.scala-sbt.org/), the Scala build tool.
 
 ## Vivado
 
@@ -25,11 +24,20 @@ https://www.xilinx.com/products/design-tools/vivado/vivado-webpack.html
    * see
      [Digilent Installation](https://reference.digilentinc.com/vivado/installing-vivado/start)
      for instructions
- * Install cable drivers and Digilent boards files (according to the above instructions)
+ * Install cable drivers and Digilent board files (according to the above instructions)
 
 ## Ubuntu/Linux
 
 This is the log when I prepared the VM for the DE 2 lab. It may be helpful to setup
 your Linux system for the DE 2 lab.
 
-
+ * Install Ubuntu 18.04 LTS, max disc set to 80 GB and 4 GB for memory
+ * uid: de2lab, pwd: de2lab
+ * Set time and time zone (important for further installation!)
+ * Settings - Power - Blank screen: never, Privacy - Aut. Screen Lock - OFF
+ * Install Vivado (in home folder)
+   * Install cable drivers
+   * Get digilent board definitions
+ * sudo apt install openjdk-8-jdk-headless
+ * Install InelliJ and the Scala plugin with a launch shortcut in favorites
+ * sudo apt install git

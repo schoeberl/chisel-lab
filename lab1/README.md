@@ -7,8 +7,10 @@ We will explore the tools needed for the Chisel based design flow.
 
 After the lab you will have a good overview of the tools used to
 edit and compile a hardware design coded in Chisel.
-You will be able to synthesize this design and configure the FPGA
-board.
+You will be able to synthesize this design and configure the FPGA board.
+
+We assume that you have downloaded the complete lab material from GitHub
+and it is placed in folder ```chisel-lab```.
 
 ### Exploring and Compiling the Hello World Component
 
