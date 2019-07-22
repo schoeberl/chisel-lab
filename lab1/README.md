@@ -92,19 +92,17 @@ The following list is only a brief summary.
 #### Vivado Project Creation
 
  * Open Vivado
- * Click *Create New Project*
+ * Click *Create Project*
  * Click *Next*
  * Pick a name and a location and click *Next*
-   * You might place your project under lab1
+   * You might place your project under ```chisel-lab/lab1```
  * Click *Next* to accept an *RTL Project*
  * In the next dialog box click *Add Files* and navigate to ```Hello.v``` and add it
- * Click *Next*
- * Click *Next* to skip the *Add Existing IP* dialog box
  * At the *Add Constraints* dialog box clock *Add Files* and select
    ```Basis3Hello.xdc``` and press *OK*.
    * For the following labs you will need to edit the constraints file derived
      from the Basys3 Master constraints file.
- * Click *Next* 
+ * Click *Next*
  * In the *Default Part* dialog box select *Boards* and the *Basys3*, press *Next*
  * Press *Finish* to create the project
 
@@ -118,19 +116,18 @@ the Basys3 board.
    start synthesis, implementation, and bitstream generation
    * This process may take some time (minutes)
  * Configure your FPGA with *Program Device* under *Open Hardware Manager*
+   * Open hardware manager after bitfile generation
+   * Open target, Auto Connect
+   * Program device
 
 You should now see an LED blinking at 1 Hz.
 
 **Congratulation! You have build your first digital design in Chisel**
 
-After this lengthy setup, the following design flow should be smooth.
+After this lengthy setup, the next run of the design flow should be smooth.
 Try to change the ```CNT_MAX``` constant to a slightly smaller value
 (e.g., 50000000 instead of 100000000) to change the blinking frequency.
-Run the Chisel code in IntelliJ again and synthesize and download again
+Run the Chisel code in IntelliJ again and synthesize and configure again
 with Vivado. The LED should now blink at a different frequency.
-Faster or slower? At which one?
-
-
-
-
+Faster or slower? At what frequency?
 

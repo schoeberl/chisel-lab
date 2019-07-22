@@ -42,8 +42,7 @@ your Linux system for the DE 2 lab.
    * Get digilent board definitions
  * ```sudo apt install openjdk-8-jdk-headless```
  * Install InelliJ and the Scala plugin with a launch shortcut in favorites
- * ```sudo apt install git```
- * ```sudo apt install make```
+ * ```sudo apt install git make gtkwave```
  * Install sbt with:
 ```
 echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
