@@ -12,6 +12,11 @@ You will be able to synthesize this design and configure the FPGA board.
 We assume that you have downloaded the complete lab material from GitHub
 and it is placed in folder ```chisel-lab```.
 
+### Background Reading
+
+ * This lab is loosely based on Chapter 1 of
+*[Digital Design with Chisel](https://github.com/schoeberl/chisel-book/wiki)*
+
 ### Exploring and Compiling the Hello World Component
 
 With IntelliJ import the lab1 project as follows:
@@ -33,29 +38,33 @@ to drive a blinking LED at 1 Hz from the 100 MHz clock from the Basys3 board.
 Do not get intimidated by those about 20 lines of code, you will soon understand the
 details. Today's lab topic is to get the tool flow working down to a configured FPGA.
 
-Following code snippet
-```Scala
-object HelloMain extends App {
-  chisel3.Driver.execute(Array[String](), () => new Hello())
-}
+Open the sbt shell at the bottom of IntelliJ window. This will take some time
+at the first time (displaying initializing). When it is ready type
 ```
-has a green triangle to the left of ```object HelloMain...```. Press this triangle
-and select *Run 'Hello'* to run the example.
+run
+```
+to compile and run your project.
 
 In the *Run* window you should see something like:
 ```
-[info] [0.004] Elaborating design...
-[info] [2.052] Done elaborating.
-Total FIRRTL Compile Time: 581.5 ms
+[info] Running HelloMain 
+Hello World, I will now generate the Verilog files!
+[info] [0.001] Elaborating design...
+[info] [2.205] Done elaborating.
+Total FIRRTL Compile Time: 916.6 ms
+[success] Total time: 22 s, completed Jul 22, 2019 11:09:25 AM
 ```
-This is the output of the Chisel compiler. If your design contains errors, you
-will see error messages in this window.
+This is the output of the Chisel compiler und runtime. To see that the program
+runs we provide a friendly greeting message, starting with the famous "Hallo World".
+If your design contains errors, you will see error messages in this window.
 
 Running the Chisel program generates a Verilog file (```Hello.v```) that we
 use for synthesizing our design for an FPGA. The content of this file is not
 important, but for curiosity you might open it right from within IntelliJ.
 
-**CLI Alternative:** If you do not like to use an IDE, you can work at the command line
+**CLI Alternative:**
+
+If you do not like to use an IDE, you can work at the command line
 (shell, terminal). Use a program editor of you choice and open ```Hello.scala```
 found at ```.../lab1/src/main/scala/Hello.scala```.
 You compile and run the *Hello World* in Chisel from the command line with a simple:
@@ -86,7 +95,7 @@ The following list is only a brief summary.
  * Click *Create New Project*
  * Click *Next*
  * Pick a name and a location and click *Next*
-   * You might place your project in a subfolder of lab1
+   * You might place your project under lab1
  * Click *Next* to accept an *RTL Project*
  * In the next dialog box click *Add Files* and navigate to ```Hello.v``` and add it
  * Click *Next*

@@ -7,8 +7,10 @@ laptop. We also include pointers for the Windows setup.
 ## Chisel
 
 Chisel is *just* a library for Scala. And Scala is just a language that executes
-on the JVM. Therefore, you need a JVM installed on your laptop, which you probably
-have already. For working on the command line you should also install
+on the JVM and uses the Java library. Therefore, you need to have Java JDK (1.8)
+installed on your laptop, which you probably already have.
+
+For working on the command line you should also install
 [sbt](https://www.scala-sbt.org/), the Scala build tool.
 
 ## Vivado
@@ -38,6 +40,14 @@ your Linux system for the DE 2 lab.
  * Install Vivado (in home folder)
    * Install cable drivers
    * Get digilent board definitions
- * sudo apt install openjdk-8-jdk-headless
+ * ```sudo apt install openjdk-8-jdk-headless```
  * Install InelliJ and the Scala plugin with a launch shortcut in favorites
- * sudo apt install git
+ * ```sudo apt install git```
+ * ```sudo apt install make```
+ * Install sbt with:
+```
+echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
+sudo apt-get update
+sudo apt-get install sbt
+```
