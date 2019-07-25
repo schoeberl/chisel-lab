@@ -7,11 +7,16 @@ laptop. We also include pointers for the Windows setup.
 ## Chisel
 
 Chisel is *just* a library for Scala. And Scala is just a language that executes
-on the JVM and uses the Java library. Therefore, you need to have Java JDK (1.8)
+on the JVM and uses the Java library. Therefore, you need to have
+[Java JDK (1.8)](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 installed on your laptop, which you probably already have.
 
 For working on the command line you should also install
 [sbt](https://www.scala-sbt.org/), the Scala build tool.
+
+A nice editor for Chisel/Scala is
+[IntelliJ](https://www.jetbrains.com/idea/download/). At the first start
+of IntelliJ download the Scala plugin (at Download featured plugins).
 
 ## Vivado
 
