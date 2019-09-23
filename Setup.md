@@ -3,6 +3,14 @@
 
 This documents describes how to setup all tools on an Linux/Ubuntu
 laptop. We also include pointers for the Windows setup.
+Here is a summary of the tools needed:
+
+ * [Java JDK (1.8)](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+ * [sbt](https://www.scala-sbt.org/)
+ * [IntelliJ](https://www.jetbrains.com/idea/download/)
+ * [Vivado WebPACK](https://www.xilinx.com/products/design-tools/vivado/vivado-webpack.html)
+ * gtkwave
+ * make, git (for command line usage)
 
 ## Chisel
 
@@ -55,3 +63,5 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89
 sudo apt-get update
 sudo apt-get install sbt
 ```
+
+## Windows
