@@ -22,7 +22,7 @@ echo Install pip3
 sudo apt install -y python3-pip
 
 echo Install Jupyter
-pip3 install -y jupyter
+pip3 install jupyter
 
 echo Install Almond Scala - kernel for Jupyter
 SCALA_VERSION=2.12.8
