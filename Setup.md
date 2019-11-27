@@ -64,4 +64,20 @@ sudo apt-get update
 sudo apt-get install sbt
 ```
 
-## Windows
+## Windows 10
+In a powershell administrator:
+```
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+
+Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile Ubuntu.appx -UseBasicParsing
+Rename-Item ./Ubuntu.appx ./Ubuntu.zip
+Expand-Archive ./Ubuntu.zip ./Ubuntu
+cd .\Ubuntu\
+
+#To open:
+.\ubuntu1804.exe
+```
+
+After runnning those commands, set up a username and password. When writing a password in Linux, it does not show anything. This is normal.
+
+After this, run the install script as described under Ubuntu
