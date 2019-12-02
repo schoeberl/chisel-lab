@@ -73,6 +73,11 @@ Instead of running the apt commands manually you can also run the provided ```se
 To install Windows Subsystem for Linux [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10), either use the following guide for manual install without Windows store or, if on your personal computer, as described in the second section:
 
 ### Non-Windows store installation
+
+*This installation version it for shared Windows machines.*
+
+Ubuntu shall be installed in a shared folder.
+
 In Powershell with administrator:
 ```
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
@@ -106,6 +111,7 @@ After installation, search for Ubuntu in your start menu.
 First time opening, create a new Unix user. Choose a username and password. **Notice that passwords in linux does not show when typing!** This is a security feature.
 
 ### Ubuntu install script
+
 In the Ubuntu terminal write the following commands (To copy/paste in a terminal running under Windows, just right click. If something is marked, it will be copied. If nothing is marked, it will paste):
 ```
 wget https://raw.githubusercontent.com/schoeberl/chisel-lab/master/setup.sh
