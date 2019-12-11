@@ -24,7 +24,7 @@ With IntelliJ import the lab1 project as follows:
  * Start IntelliJ
  * Click *Import Project*
  * Navigate to ```.../chisel-lab/lab1``` and select the file ```build.sbt```, press *Open*
- * Select the JDK 1.8 as installed before (not Java 11!)
+ * Select the JDK 1.8 (not Java 11!)
  * Press OK on the next dialog box
 
 This importing from the project may take some time at the first import, as Scala and Chisel files need to be downloaded. Wait until it is finished.
@@ -39,10 +39,9 @@ to drive a blinking LED at 1 Hz from the 100 MHz clock from the Basys3 board.
 Do not get intimidated by those about 20 lines of code, you will soon understand the
 details. Today's lab topic is to get the tool flow working down to a configured FPGA.
 
-Open the sbt shell at the bottom of IntelliJ window. This will take some time
-at the first time (displaying initializing). When it is ready type
+Open the terminal at the bottom of the IntelliJ window start the build process with:
 ```
-run
+sbt run
 ```
 to compile and run your project.
 
