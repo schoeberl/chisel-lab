@@ -24,6 +24,7 @@ With IntelliJ import the lab1 project as follows:
  * Start IntelliJ
  * Click *Import Project*
  * Navigate to ```.../chisel-lab/lab1``` and select the file ```build.sbt```, press *Open*
+ * Select the JDK 1.8 as installed before (not Java 11!)
  * Press OK on the next dialog box
 
 This importing from the project may take some time at the first import, as Scala and Chisel files need to be downloaded. Wait until it is finished.
