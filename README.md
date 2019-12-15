@@ -6,8 +6,8 @@ Although this lab is customized for the DTU course, it can also serve as
 introduction lab for digital design with [Chisel](https://chisel.eecs.berkeley.edu/).
 
 The lab is based on:
-[Digital Design with Chisel](https://github.com/schoeberl/chisel-book/wiki),
-work-in-progress edition, by Martin Schoeberl.
+[Digital Design with Chisel](http://www.imm.dtu.dk/~masca/chisel-book.html),
+first edition, by Martin Schoeberl.
 
 To use this material you can:
 (1) download the repo as a .zip file,
@@ -27,7 +27,7 @@ The following list gives an overview of all lab sessions and assignments.
 For lab sessions where no link is given, we will provide the material in
 [DTU Inside](https://www.inside.dtu.dk).
 
- * week 1: [Lab 1: Hello World in Chisel](lab1)
+ * [Lab 1: Hello World in Chisel](lab1)
 
 ## Resources
 
