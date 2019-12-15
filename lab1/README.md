@@ -15,7 +15,7 @@ and it is placed in folder ```chisel-lab```.
 ### Background Reading
 
  * This lab is loosely based on Chapter 1 of
-*[Digital Design with Chisel](https://github.com/schoeberl/chisel-book/wiki)*
+*[Digital Design with Chisel](http://www.imm.dtu.dk/~masca/chisel-book.html)*
 
 ### Exploring and Compiling the Hello World Component
 

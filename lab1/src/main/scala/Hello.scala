@@ -29,6 +29,6 @@ class Hello extends Module {
  * An object extending App to generate the Verilog code.
  */
 object HelloMain extends App {
-  println("Hello World, I will now generate the Verilog files!")
+  println("Hello World, I will now generate the Verilog file!")
   chisel3.Driver.execute(Array[String](), () => new Hello())
 }
