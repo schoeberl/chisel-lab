@@ -1,22 +1,29 @@
-# Lab Session 2
+# Lab 2: Combinational Circuits in Chisel
 
-## Combinational Circuits in Chisel
+The lab session will show you how to describe combinational circuits
+with Chisel. You get modules, where you need to add the description of
+combinational circuits. You will run unit tests to test your circuit.
+Optional you can also synthesize your circuit for an FPGA and test it
+with the FPGA board.
 
-The lab session will show you...
+Having the tests before the implementation is called test driven
+development and common in software development, but is also good practice
+in hardware design. This time the tests are given, in a later lab session
+you will write the tests.
 
-After the lab you will have a good overview of the tools used to
-edit and compile a hardware design coded in Chisel.
-You will be able to synthesize this design and configure the FPGA board.
+After the lab you will know how to use the few constructs to describe
+common combinational building blocks, such as mulitplexer, encoder,
+decoder, in Chisel.
 
 We assume that you have downloaded the complete lab material from GitHub
 and it is placed in folder ```chisel-lab```.
 
-### Background Reading
+## Background Reading
 
  * This lab is loosely based on Chapter 2 of
 *[Digital Design with Chisel](http://www.imm.dtu.dk/~masca/chisel-book.html)*
 
-### Compiling and Testing of Combinational Circuits
+## Compiling and Testing of Combinational Circuits
 
 Today's lab topic is to describe selected combinational building blocks in Chisel.
 We provide the testing code for your circuits. You have completed all exercises
@@ -30,8 +37,8 @@ Project from Existing Source...*
  * Navigate to ```.../chisel-lab/lab2``` and select the file ```build.sbt```, press *Open*
  * Make sure to select JDK 1.8 (not Java 11!)
  * Press OK on the next dialog box
-
-
+ 
+### A Simple Circuit
 
 Then navigate to the Chisel component ```Majority``` by following in the Project navigator along: *lab2 - src - main - scala - Majority. Open ```Majority``` with a double click.
 
@@ -48,15 +55,61 @@ sbt test
 ```
 to compile and test your project.
 
-In the *Run* window you should see something like:
+In the *Run* window you should see several tests failing, similar to:
 ```
-TBD
+[info] *** 1 TEST FAILED ***
+[error] Failed: Total 3, Failed 1, Errors 0, Passed 2
 ```
+
+For the majority circuit we provide three *tests*:
+
+ 1. ```MajorityPrinter```: A test that simply prints the logic table of the
+   circuit. This form of test is helpful for debugging, but not for
+   automated regression tests.
+ 1. ```MajoritySimple```: A too simple test that covers only a some cases
+   and will succeed for the too simple default implementation. This shows
+   you that testing can usually not guarantee a 100% correct solution.
+ 1. ```MajorityFull```: is an exhaustive tester that covers all possibilities.
+   This is the best form of a tester. However, exhaustive testing is only
+   possible for very simple circuits.
+   
+You run a single test with following command in the terminal window:
+
+```
+sbt "testOnly MajorityPrinter"
+```
+
+Run the ```MajorityPrinter``` and watch the printout of the logic table:
+
+```
+[info] [0.002] Logic table for Majority
+[info] [0.002] a b c -> out
+[info] [0.016] 0 0 0 -> 0
+[info] [0.017] 1 0 0 -> 1
+[info] [0.018] 0 1 0 -> 0
+[info] [0.019] 1 1 0 -> 1
+[info] [0.021] 0 0 1 -> 0
+[info] [0.022] 1 0 1 -> 1
+[info] [0.023] 0 1 1 -> 0
+[info] [0.024] 1 1 1 -> 1
+test Majority Success: 0 tests passed in 13 cycles taking 0.045750 seconds
+[info] [0.025] RAN 8 CYCLES PASSED
+```
+
+This shows that the default implementation just copies the value of ```a```
+to the output. Clearly not a majority circuit. Change the Majority circuit
+to implement a majority circuit. You can watch the logic table for debugging,
+but at the end run:
+```
+sbt "testOnly MajorityFull"
+```
+to make sure you have completed this exercise.
+   
 
 ### Optional: Generating Hardware
 
 In lab1 you have learned how to generate hardware to run in an FPGA.
-In this lab exercise you used testing to run your combinational circuites.
+In this lab exercise you used testing to run your combinational circuit.
 However, we can also run those circuits on the FPGA boards and use switches
 and LEDs to test the circuits.
 

@@ -22,7 +22,7 @@ class MajorityTesterSimple(dut: Majority) extends PeekPokeTester(dut) {
   expect(dut.io.out, 1)
 }
 
-class MajoritySpecSimple extends FlatSpec with Matchers {
+class MajoritySimple extends FlatSpec with Matchers {
   "Majority simple test" should "pass" in {
     chisel3.iotesters.Driver(() => new Majority) { c => new MajorityTesterSimple(c)} should be (true)
   }
@@ -45,7 +45,7 @@ class MajorityTesterPrint(dut: Majority) extends PeekPokeTester(dut) {
   }
 }
 
-class MajoritySpecPrint extends FlatSpec with Matchers {
+class MajorityPrinter extends FlatSpec with Matchers {
   "Majority print results" should "pass" in {
     chisel3.iotesters.Driver(() => new Majority) { c => new MajorityTesterPrint(c)} should be (true)
   }
@@ -67,7 +67,7 @@ class MajorityTester(dut: Majority) extends PeekPokeTester(dut) {
   }
 }
 
-class MajoritySpec extends FlatSpec with Matchers {
+class MajorityFull extends FlatSpec with Matchers {
   "Majority exhaustive test" should "pass" in {
     chisel3.iotesters.Driver(() => new Majority) { c => new MajorityTester(c)} should be (true)
   }

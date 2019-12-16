@@ -28,6 +28,7 @@ For lab sessions where no link is given, we will provide the material in
 [DTU Inside](https://www.inside.dtu.dk).
 
  * [Lab 1: Hello World in Chisel](lab1)
+ * [Lab 2: Combinational Circuits in Chisel](lab2)
 
 ## Resources
 

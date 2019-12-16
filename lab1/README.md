@@ -1,6 +1,4 @@
-# Lab Session 1
-
-## Hello World in Chisel
+# Lab 1: Hello World in Chisel
 
 The lab session will show you a Hello World example (a blinking LED) in Chisel.
 We will explore the tools needed for the Chisel based design flow.
@@ -12,12 +10,12 @@ You will be able to synthesize this design and configure the FPGA board.
 We assume that you have downloaded the complete lab material from GitHub
 and it is placed in folder ```chisel-lab```.
 
-### Background Reading
+## Background Reading
 
  * This lab is loosely based on Chapter 1 of
 *[Digital Design with Chisel](http://www.imm.dtu.dk/~masca/chisel-book.html)*
 
-### Exploring and Compiling the Hello World Component
+## Exploring and Compiling the Hello World Component
 
 With IntelliJ import the lab1 project as follows:
 
@@ -77,7 +75,7 @@ Future lab projects may contain a ```Makefile``` that you can execute with ```ma
 
 **End CLI Alternative**
 
-### Synthesizing and Configuring the FPGA with Vivado.
+## Synthesizing and Configuring the FPGA with Vivado.
 
 We use the Xilinx tool
 [Vivado](https://www.xilinx.com/products/design-tools/vivado/vivado-webpack.html)
@@ -89,7 +87,7 @@ targeting a Digilent BASYS 3 FPGA board* from last semester.
 Please use that document (available in DTU Inside).
 The following list is only a brief summary.
 
-#### Vivado Project Creation
+### Vivado Project Creation
 
  * Open Vivado
  * Click *Create Project*
@@ -106,7 +104,7 @@ The following list is only a brief summary.
  * In the *Default Part* dialog box select *Boards* and the *Basys3*, press *Next*
  * Press *Finish* to create the project
 
-#### Synthesize and Configure the FPGA Board
+### Synthesize and Configure the FPGA Board
 
 We are just a few clicks away from running our great *Hello World* design in
 the Basys3 board.
