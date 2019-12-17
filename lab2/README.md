@@ -134,7 +134,7 @@ and automate.
 
 ### A Multiplexer
 
-![Mux](../figures/mux.pdf)
+![Mux](../figures/mux.svg)
 
 ## TODO:
 
