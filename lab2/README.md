@@ -20,7 +20,7 @@ and it is placed in folder ```chisel-lab```.
 
 ## Background Reading
 
- * This lab is loosely based on Chapter 2 of
+ * This lab is loosely based on Chapter 2 and 5 of
 *[Digital Design with Chisel](http://www.imm.dtu.dk/~masca/chisel-book.html)*
 
 ## Compiling and Testing of Combinational Circuits
@@ -38,7 +38,9 @@ Project from Existing Source...*
  * Make sure to select JDK 1.8 (not Java 11!)
  * Press OK on the next dialog box
  
-### A Simple Circuit
+### A Majority Voter
+
+We start as first exercise with a relative simple circuit, a majority voter.
 
 Then navigate to the Chisel component ```Majority``` by following in the Project navigator along: *lab2 - src - main - scala - Majority*.
 Open ```Majority``` with a double click.
@@ -50,7 +52,7 @@ the circuit is the majority of the inputs, e.g., if ```a==1```, ```b==0```, and
 Your task is to implement that circuit in Chisel.
 
 
-Open the terminal at the bottom of the IntelliJ window start the build process with:
+Open the terminal at the bottom of the IntelliJ window and run:
 ```
 sbt test
 ```
@@ -67,7 +69,7 @@ For the majority circuit we provide three *tests*:
  1. ```MajorityPrinter```: A test that simply prints the logic table of the
    circuit. This form of test is helpful for debugging, but not for
    automated regression tests.
- 1. ```MajoritySimple```: A too simple test that covers only a some cases
+ 1. ```MajoritySimple```: A too simple test that covers only some cases
    and will succeed for the too simple default implementation. This shows
    you that testing can usually not guarantee a 100% correct solution.
  1. ```MajorityFull```: is an exhaustive tester that covers all possibilities.
@@ -98,9 +100,9 @@ test Majority Success: 0 tests passed in 13 cycles taking 0.045750 seconds
 ```
 
 This shows that the default implementation just copies the value of ```a```
-to the output. Clearly not a majority circuit. Change the Majority circuit
-to implement a majority circuit. You can watch the logic table for debugging,
-but at the end run:
+to the output. Clearly not a majority circuit. Change the Majority component
+to implement the majority circuit. You can watch the logic table for debugging.
+However, at the end run:
 ```
 sbt "testOnly MajorityFull"
 ```
@@ -110,7 +112,7 @@ to make sure you have completed this exercise.
 ### Optional: Generating Hardware
 
 In lab1 you have learned how to generate hardware to run in an FPGA.
-In this lab exercise you used testing to run your combinational circuit.
+In the current lab exercise you used testing to run your combinational circuit.
 However, we can also run those circuits on the FPGA boards and use switches
 and LEDs to test the circuits.
 
@@ -121,15 +123,18 @@ sbt run
 Create a Xiling Vivado project with the source file ```Majority.v``` and
 the constraint file ```majority.xdc``` that includes the pin definitions.
 Synthesize and implement the design, create the bitstream, configure the
-FPGA and test the device with the three switches ```sw0```, ```sw1```,
+FPGA, and test the device with the three switches ```sw0```, ```sw1```,
 and ```sw2```.
 
 Although testing in real hardware gives confidence that the design works
 it has two drawbacks: (1) synthesizing, even a small design, consumes a
 considerable amount of time and (2) it is manual.
-With test written in Chisel the testing is faster and easier to reproduce
+With tests written in Chisel the testing is faster and easier to reproduce
 and automate.
 
+### A Multiplexer
+
+![Mux](../figures/mux.pdf)
 
 ## TODO:
 

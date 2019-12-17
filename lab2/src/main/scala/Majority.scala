@@ -16,8 +16,8 @@ class Majority extends Module {
   val b = io.b
   val c = io.c
 
-  // This too simple implementation will pass the most simplistic tests only (MajoritySpecSimple).
-  // Rewrite this expression to express the majority and pass all tests.
+  // This too simple implementation will pass the most simplistic tests only (MajoritySimple).
+  // Rewrite this expression to express the majority to pass all tests.
 
   // ***** your code starts here *****
   val res = a
