@@ -9,6 +9,8 @@ The lab is based on:
 [Digital Design with Chisel](http://www.imm.dtu.dk/~masca/chisel-book.html),
 first edition, by Martin Schoeberl.
 
+![Book Cover](figures/cover-small.jpg)
+
 To use this material you can:
 (1) download the repo as a .zip file,
 (2) clone the repo to have all material offline (using it also for your solutions),

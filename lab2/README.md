@@ -40,7 +40,8 @@ Project from Existing Source...*
  
 ### A Simple Circuit
 
-Then navigate to the Chisel component ```Majority``` by following in the Project navigator along: *lab2 - src - main - scala - Majority. Open ```Majority``` with a double click.
+Then navigate to the Chisel component ```Majority``` by following in the Project navigator along: *lab2 - src - main - scala - Majority*.
+Open ```Majority``` with a double click.
 
 This is a Chisel component that shall implement the majority voting of three
 signals (```a```, ```b```, and ```c```). Majority voting means that the output of
