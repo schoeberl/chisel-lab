@@ -132,9 +132,41 @@ considerable amount of time and (2) it is manual.
 With tests written in Chisel the testing is faster and easier to reproduce
 and automate.
 
-### A Multiplexer
+### A Multiplexer (Mux)
 
 ![Mux](../figures/mux.svg)
+
+A multplexer selects between different input signals. In the above figure
+it is a 2:1 multiplexer. With ```sel``` we route either input ```a``` or
+input ```b``` to output ```y```. We assume in this example that ```a```
+is slected when ```sel``` is ```0``` or ```false```, otherwise  ```b```.
+
+Open the ```Mux2``` component to implement the multiplexer.
+You can test your implementation with:
+```
+sbt "testOnly Mux2Spec"
+```
+
+A low-level solution would be to describe the multiplexing function
+as Boolean equation, such as ```(!sel & a) | (sel & b)```.
+This is correct (try it in ```Mux2```), but hard to read.
+Furthermore, this equation does not work so easily with multi-bit
+values.
+
+A better solution is to conditional assignment, in Chisel
+with ```when``` and ```otherwise```.
+Look it up in Chapter 5 of the Chisel book and implement the
+Multiplexer.
+
+As multiplexing is such a fundamental operation, that Chisel provides
+provides a multiplexer component ```Mux```.
+Implement you final version of a multiplexer by using the ```Mux```
+component.
+
+The *cool* thing on the ```Mux``` component is that it can multiplex
+arbitrary complex data structures, not just a vector of bits.
+Any user defined data type will work with ```Mux```.
+
 
 ## TODO:
 
