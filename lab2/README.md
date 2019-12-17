@@ -7,13 +7,13 @@ Optional you can also synthesize your circuit for an FPGA and test it
 with the FPGA board.
 
 Having the tests before the implementation is called test driven
-development and common in software development, but is also good practice
-in hardware design. This time the tests are given, in a later lab session
-you will write the tests.
+development and is common in software development, but it is also good practice
+in hardware design. This time the tests are given to you, in a later lab session
+you will write your own tests.
 
 After the lab you will know how to use the few constructs to describe
 common combinational building blocks, such as mulitplexer, encoder,
-decoder, in Chisel.
+decoder, and function tables in Chisel.
 
 We assume that you have downloaded the complete lab material from GitHub
 and it is placed in folder ```chisel-lab```.
@@ -113,4 +113,25 @@ In this lab exercise you used testing to run your combinational circuit.
 However, we can also run those circuits on the FPGA boards and use switches
 and LEDs to test the circuits.
 
-TODO: add a description and .xdc file for exploring the majority voting.
+Generate the Verilog description by running the Majority App with:
+```
+sbt run
+```
+Create a Xiling Vivado project with the source file ```Majority.v``` and
+the constraint file ```majority.xdc``` that includes the pin definitions.
+Synthesize and implement the design, create the bitstream, configure the
+FPGA and test the device with the three switches ```sw0```, ```sw1```,
+and ```sw2```.
+
+Although testing in real hardware gives confidence that the design works
+it has two drawbacks: (1) synthesizing, even a small design, consumes a
+considerable amount of time and (2) it is manual.
+With test written in Chisel the testing is faster and easier to reproduce
+and automate.
+
+
+## TODO:
+
+ * more building blocks
+ * arithmetic stuff
+ * register and counter here or in the next session?

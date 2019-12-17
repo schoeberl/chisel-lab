@@ -20,11 +20,16 @@ class Majority extends Module {
   // Rewrite this expression to express the majority and pass all tests.
 
   // ***** your code starts here *****
-  val res = a
+  val res = (a & b) | (a & c) | (b & c)
   // ***** your code ends here *****
 
   // Hint: this initial exercise shall familiarize you with the testing environment.
   // The solution is following expression: (a & b) | (a & c) | (b & c)
 
   io.out := res
+}
+
+// generate Verilog
+object Majority extends App {
+  chisel3.Driver.execute(args, () => new Majority())
 }
