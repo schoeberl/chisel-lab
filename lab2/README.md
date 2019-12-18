@@ -120,6 +120,13 @@ Generate the Verilog description by running the Majority App with:
 ```
 sbt run
 ```
+As there are more than one App in this lab, you need to select which one
+to run, the ```Majority```. Like the test cases, you can also directly
+select which App to run by:
+```sbtshell
+sbt "runMain Majority"
+```
+
 Create a Xiling Vivado project with the source file ```Majority.v``` and
 the constraint file ```majority.xdc``` that includes the pin definitions.
 Synthesize and implement the design, create the bitstream, configure the
@@ -166,6 +173,14 @@ component.
 The *cool* thing on the ```Mux``` component is that it can multiplex
 arbitrary complex data structures, not just a vector of bits.
 Any user defined data type will work with ```Mux```.
+
+### Seven Segment Decoder
+
+To generate the Verilog execute:
+```aidl
+sbt run
+```
+then select which App you want to run.
 
 
 ## TODO:

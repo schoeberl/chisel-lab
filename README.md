@@ -38,3 +38,4 @@ For lab sessions where no link is given, we will provide the material in
  * [IntelliJ for Scala](https://docs.scala-lang.org/getting-started-intellij-track/getting-started-with-scala-in-intellij.html)
  * [Vivado WebPACK](https://www.xilinx.com/products/design-tools/vivado/vivado-webpack.html)
  * [Setup.md](Setup.md) installation instructions
+ * [Basys 3](https://reference.digilentinc.com/reference/programmable-logic/basys-3/start?redirect=1)
