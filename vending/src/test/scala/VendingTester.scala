@@ -4,12 +4,24 @@ import org.scalatest._
 
 
 class VendingTester extends FlatSpec with Matchers {
-  "Display test" should "pass" in {
+  "Vending machine test" should "pass" in {
     Driver.execute(Array("--generate-vcd-output", "on"), () => new VendingMachine()) {
       c => new PeekPokeTester(c) {
         println("We are generting a VCD file with the test of the vending machine")
-        // poke(c.io.sw, 0xf123)
-        step(100)
+        poke(c.io.price, 7)
+        step(3)
+        poke(c.io.coin2, 1)
+        step(3)
+        poke(c.io.coin2, 0)
+        step(6)
+        poke(c.io.coin5, 1)
+        step(3)
+        poke(c.io.coin5, 0)
+        step(8)
+        poke(c.io.buy, 1)
+        step(3)
+        poke(c.io.buy, 0)
+        step(10)
       }
     } should be (true)
   }
