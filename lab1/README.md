@@ -23,6 +23,9 @@ With IntelliJ import the lab1 project as follows:
  * Click *Import Project*
  * Navigate to ```.../chisel-lab/lab1``` and select the file ```build.sbt```, press *Open*
  * Select the JDK 1.8 (not Java 11!)
+   * On Project JDK select *New*
+   * Select *JDK*
+   * Select the path to your OpenJDK 8 installation, usually ```C:\Program Files\AdoptOpenJDK\jdk-8.0.232.09-hotspot\'''
  * Press OK on the next dialog box
 
 This importing from the project may take some time at the first import, as Scala and Chisel files need to be downloaded. Wait until it is finished.
@@ -70,8 +73,6 @@ You compile and run the *Hello World* in Chisel from the command line with a sim
 ```bash
 sbt run
 ```
-
-Future lab projects may contain a ```Makefile``` that you can execute with ```make```.
 
 **End CLI Alternative**
 

@@ -80,7 +80,10 @@ Instead of running the apt commands manually you can also run the provided ```se
  * Start IntelliJ to finish the setup
    * Select the light UI theme
    * On the featured plugins select Install for Scala
-   * When importing a project, select the JDK 1.8 as installed before (not Java 11!)
+   * When importing a project, *select the JDK 1.8* you installed before (not Java 11!)
+     * On Project JDK select *New*
+     * Select *JDK*
+     * Select the path to your OpenJDK 8 installation, usually ```C:\Program Files\AdoptOpenJDK\jdk-8.0.232.09-hotspot\'''
  * Install [GTKWave](http://gtkwave.sourceforge.net/)
    * Put a link to the executable on the desktop
  * Copy the PDF of the [Chisel Book](http://www.imm.dtu.dk/~masca/chisel-book.html) on the desktop
