@@ -35,7 +35,6 @@ https://www.xilinx.com/products/design-tools/vivado/vivado-webpack.html
  * Download [Vivado WebPACK](https://www.xilinx.com/products/design-tools/vivado/vivado-webpack.html)
    * You need to register with Xilinx
    * To save some space you can deselect all devices except Artix-7
-
  * For Linux the installer executable can be run with ```bash Xilinx...```
    * see
      [Digilent Installation](https://reference.digilentinc.com/vivado/installing-vivado/start)
@@ -78,7 +77,7 @@ Instead of running the apt commands manually you can also run the provided ```se
    * The community edition
    * Include Create Desktop Shortcut
  * Start IntelliJ to finish the setup
-   * Select the light UI theme
+   * Select the light UI theme (if you prefer)
    * On the featured plugins select Install for Scala
    * When importing a project, *select the JDK 1.8* you installed before (not Java 11!)
      * On Project JDK select *New*
@@ -98,6 +97,25 @@ javac
 sbt
 ```
 
+## macOS
+
+Vivado is not supported under macOS, however, the Chisel tool flow runs fine
+on the Mac. You can simulate your design on the Mac and use a virtual machine
+(e.g., with Ubuntu) to synthesize your design with Vivado.
+
+ * Install OpenJDK 8 from [AdoptOpenJDK](https://adoptopenjdk.net/)
+ * Install sbt with ```brew install sbt'''
+ * Install [GTKWave](http://gtkwave.sourceforge.net/)
+ * Install [IntelliJ](https://www.jetbrains.com/idea/download/)
+   * The community edition
+   * Include Create Desktop Shortcut
+ * Start IntelliJ to finish the setup
+   * Select the light UI theme (if you prefer)
+   * On the featured plugins select Install for Scala
+   * When importing a project, *select the JDK 1.8* you installed before (not Java 11!)
+     * On Project JDK select *New*
+     * Select *JDK*
+     * Select the path to your OpenJDK 8 installation
 
 ## Common Error
 
