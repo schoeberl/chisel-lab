@@ -65,6 +65,7 @@ sudo apt-get update
 sudo apt-get install sbt
 ```
  * Install IntelliJ and the Scala plugin with a launch shortcut in favorites
+ * Shortcut to GtkWave on desktop
 
 Instead of running the apt commands manually you can also run the provided ```setup.sh```.
 
