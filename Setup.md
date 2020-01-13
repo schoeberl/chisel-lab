@@ -82,7 +82,7 @@ Instead of running the apt commands manually you can also run the provided ```se
    * When importing a project, *select the JDK 1.8* you installed before (not Java 11!)
      * On Project JDK select *New*
      * Select *JDK*
-     * Select the path to your OpenJDK 8 installation, usually ```C:\Program Files\AdoptOpenJDK\jdk-8.0.232.09-hotspot\'''
+     * Select the path to your OpenJDK 8 installation, usually ```C:\Program Files\AdoptOpenJDK\jdk-8.0.232.09-hotspot\```
  * Install [GTKWave](http://gtkwave.sourceforge.net/)
    * Put a link to the executable on the desktop
  * Copy the PDF of the [Chisel Book](http://www.imm.dtu.dk/~masca/chisel-book.html) on the desktop
@@ -104,7 +104,7 @@ on the Mac. You can simulate your design on the Mac and use a virtual machine
 (e.g., with Ubuntu) to synthesize your design with Vivado.
 
  * Install OpenJDK 8 from [AdoptOpenJDK](https://adoptopenjdk.net/)
- * Install sbt with ```brew install sbt'''
+ * Install sbt with ```brew install sbt```
  * Install [GTKWave](http://gtkwave.sourceforge.net/)
  * Install [IntelliJ](https://www.jetbrains.com/idea/download/)
    * The community edition
