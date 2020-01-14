@@ -12,6 +12,18 @@ Here is a summary of the tools we need:
  * [GTKWave](http://gtkwave.sourceforge.net/)
  * make, git (for command line usage)
 
+## Ubuntu Virtual Machine
+
+The easiest way to get all tools installed is to use the Ubuntu virtual machine
+provided at:
+
+ * [Ubuntu VM](http://patmos.compute.dtu.dk/de2lab.zip)
+
+The user is ```de2lab``` and the password is ```de2lab```. You need the free
+[VMWare Player](https://my.vmware.com/en/web/vmware/free#desktop_end_user_computing/vmware_workstation_player/15_0)
+for this virtual machine.
+
+
 ## Chisel
 
 Chisel is *just* a library for Scala. And Scala is just a language that executes
