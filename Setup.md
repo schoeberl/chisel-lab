@@ -33,6 +33,7 @@ on the Java virtual machine (JVM) and uses the Java library. Therefore, you need
 
 For working on the command line you should also install
 [sbt](https://www.scala-sbt.org/), the Scala build tool.
+Please note that installing sbt will make the IntelliJ-build process a lot easier as well.
 
 A nice editor for Chisel/Scala is
 [IntelliJ](https://www.jetbrains.com/idea/download/). At the first start

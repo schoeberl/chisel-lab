@@ -29,7 +29,7 @@ Today's lab topic is to describe selected combinational building blocks in Chise
 We provide the testing code for your circuits. You have completed all exercises
 when all tests (run with ```sbt test```) complete without an error.
 
-With IntelliJ import the lab1 project as follows:
+With IntelliJ import the lab2 project as follows:
 
  * Start IntelliJ
  * Click *Import Project*, or on a running IntelliJ: *File - New -
