@@ -20,6 +20,8 @@ or (4) simply just browse it online on GitHub.
 Best is to have all the tools installed on your laptop.
 See: [Setup.md](Setup.md)
 
+We collect frequently asked questions in the [FAQ.md](FAQ.md).
+
 **Contributions:** We are happily accepting contributions in the form of
 pull requests. Even the fix of a small typo is appreciated.
 
