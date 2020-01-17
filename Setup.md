@@ -17,11 +17,11 @@ Here is a summary of the tools we need:
 The easiest way to get all tools installed is to use the Ubuntu virtual machine
 provided at:
 
- * [Ubuntu VM](http://patmos.compute.dtu.dk/de2lab.zip)
+ * [Ubuntu VM](https://patmos-download.compute.dtu.dk/de2lab.zip)
 
 The user is ```de2lab``` and the password is ```de2lab```. You need the free
 [VMWare Player](https://my.vmware.com/en/web/vmware/free#desktop_end_user_computing/vmware_workstation_player/15_0)
-for this virtual machine.
+for this virtual machine. Note, that this VM is BIG. The .zip file is 44 GB.
 
 
 ## Chisel
