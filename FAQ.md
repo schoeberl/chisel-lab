@@ -9,6 +9,13 @@ You can extract a subset of wires from a bus x like this:
 
 This will extract wire n down to m both included. It is important to know that n >= m, otherwise Chisel will throw a hard to understand error.
 
+### Missing ```.W```
+
+One possible error when defining constants with a dedicated width is missing the ```.W```
+specifier for a width. E.g., ```1.U(32)``` will not define a 32-bit wide constant representing 1.
+Instead, the expression ```(32)``` is interpreted as bit extraction from position 32, which results
+in a single bit constant of 0. Probably not what the original intention of the programmer was.
+
 
 ## Error msgs
 
