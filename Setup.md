@@ -10,7 +10,7 @@ Here is a summary of the tools we need:
  * [IntelliJ](https://www.jetbrains.com/idea/download/) (the free Community version)
  * [Vivado WebPACK](https://www.xilinx.com/products/design-tools/vivado/vivado-webpack.html)
  * [GTKWave](http://gtkwave.sourceforge.net/)
- * make, git (for command line usage)
+ * make, git (for command line usage) (alternatively, a GUI Git client, see the section further down)
 
 ## Ubuntu Virtual Machine
 
@@ -135,7 +135,7 @@ on the Mac. You can simulate your design on the Mac and use a virtual machine
 
 ## Common Error
 
-Her we collect common issues when installing the tools.
+Her we collect common issues when installing the tools. Also refer to the [FAQ](FAQ.md)
 
  * Wrong Java version. Version later then JDK 8 do not work with Chisel/Scala
 

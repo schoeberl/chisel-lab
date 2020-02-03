@@ -27,7 +27,7 @@ You can't bind some wires of a output bus. Either none or all in one expression.
 ### scala.MatchError: List(UInt\<x\>(0) ... UInt\<x>(y)) (of class scala.collection.immutable.$colon$colon)
 This error message usually indicates that you have declared an Enum with a wrong indication of number of elements.
 
-###Cannot reassign to read-only
+### Cannot reassign to read-only
 This most likely happens when you are trying to assign a subfield of a bus.
 ```scala
 class someClass extends Module {
@@ -42,9 +42,9 @@ io.y(1) := 1.U
 ```
 To get around this, use *extraction and concatenation*, see the following [SO post](https://stackoverflow.com/questions/40950073/chisel-3-assignment-to-bit-range).
 
-Alternatively, unpack your bus into a vector of booleans, modify it, and then repack it as a bus again, see the  following entry from [the Chisel Cookbook](https://github.com/freechipsproject/chisel3/wiki/Cookbook#how-do-i-do-subword-assignment-assign-to-some-bits-in-a-uint) ("How do I do subword assignement?")
+Alternatively, unpack your bus into a vector of booleans, modify it, and then repack it as a bus again, see the following entry from [the Chisel Cookbook](https://github.com/freechipsproject/chisel3/wiki/Cookbook#how-do-i-do-subword-assignment-assign-to-some-bits-in-a-uint) ("How do I do subword assignement?")
 
-###Understanding very long stack traces
+### Understanding very long stack traces
 You may sometimes meet a very long stack trace when you've made an error. This occurs when the error is not Chisel-specific but it is a Scala error. When you meet the long stack traces, most error msgs will be indented. Scroll up from the bottom, until you meet an unindented message
 ```
 Exception in thread "main" ...
@@ -54,9 +54,10 @@ Caused by: (THE REAL ERROR MESSAGE)
 ```
 In the second section of indented messages, you may see links highlighted in blue. These will take you to the portions of your code where the error has occured.
 
-#IndexOutOfBoundsException
+### IndexOutOfBoundsException
 Might occur when you're trying to do a sub-field assignment (see above) on a vector. 
 ```scala
+//Not valid code, do not copy
 val myVec := Wire(Vec(1, UInt(16.W)))
 myVec(2) := 0.U 
 ```
@@ -70,6 +71,6 @@ A wrong number n in Enum(n) for FSM states can give a long error log.
 
 ### Error "Bitstream Generation failed"
 
-comes from a missing pin assignment in the .xdc file
+Comes from a missing pin assignment in the .xdc file. Look for the blue text in the warning/error messages, this will tell you what pins are unconstrained.
 
 
