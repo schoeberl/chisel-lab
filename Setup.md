@@ -101,6 +101,8 @@ Instead of running the apt commands manually you can also run the provided ```se
    * Put a link to the executable on the desktop
  * Copy the PDF of the [Chisel Book](http://www.imm.dtu.dk/~masca/chisel-book.html) on the desktop
  * Install a [git client](https://git-scm.com/download/win)
+	* If you have no prior experience using git, check the followings links for an introduction to the git workflow and the advantages of version-control systems. [1](https://www.youtube.com/watch?v=SWYqp7iY_Tc), [2](https://www.freecodecamp.org/news/what-is-git-and-how-to-use-it-c341b049ae61/). 
+	Do note that most git tutorials emphasize command line usage, but this is by no means a must. There exist several great GUI git clients, examples of which are [Github Desktop](https://desktop.github.com/) and [Fork](https://fork.dev/).
  
 
 The installation can be checked with the first exercise in the lab. Or a quick, partial
