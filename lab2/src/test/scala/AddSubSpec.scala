@@ -3,19 +3,17 @@ import org.scalatest._
 
 class AddSubTester(dut: AddSub) extends PeekPokeTester(dut) {
 
-  for (a <- 0 to 1) {
-    for (b <- 0 to 1) {
-      for (sel <- 0 to 1) {
-        poke(dut.io.a, a)
-        poke(dut.io.b, b)
-        poke(dut.io.sel, sel)
-        step(1)
-        val res = if (sel == 0) a else b
-        // println(a + " " + b + " " + sel + " " + res)
-        expect(dut.io.y, res)
-      }
-    }
-  }
+  poke(dut.io.a, 1)
+  poke(dut.io.b, 2)
+  poke(dut.io.selAdd, 1)
+  step(1)
+  expect(dut.io.y, 3)
+
+  poke(dut.io.a, 3)
+  poke(dut.io.b, 2)
+  poke(dut.io.selAdd, 0)
+  step(1)
+  expect(dut.io.y, 1)
 }
 
 class AddSubSpec extends FlatSpec with Matchers {

@@ -2,20 +2,20 @@ import chisel3._
 
 class AddSub extends Module {
   val io = IO(new Bundle {
-    val a = Input(Bool())
-    val b = Input(Bool())
-    val sel = Input(Bool())
-    val y = Output(Bool())
+    val a = Input(UInt(4.W))
+    val b = Input(UInt(4.W))
+    val selAdd = Input(Bool())
+    val y = Output(UInt(4.W))
   })
 
   val a = io.a
   val b = io.b
-  val sel = io.sel
-  val res = Wire(Bool())
+  val selAdd = io.selAdd
+  val res = WireInit(0.U(4.W))
 
   // ***** your code starts here *****
 
-  res := b
+  // res := ????
 
   // ***** your code ends here *****
 

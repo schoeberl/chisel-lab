@@ -189,4 +189,14 @@ the most elegant solution, but other solutions are valid as well.
 
 ### Addition/Subtraction Circuit
 
+As a last exercise you have to build a small arithmetic circuit.
+The circuit shall be able to add or subtract two unsigned integer.
+One input (```selAdd```) decides if the two numbers are added or
+subtracted (sounds like a multiplexer). The test is called as:
+
+```
+ sbt "testOnly AddSubSpec"
+```
+
+The file for your solution is ```AddSub```.
 
