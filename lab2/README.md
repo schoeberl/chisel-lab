@@ -174,17 +174,9 @@ The *cool* thing on the ```Mux``` component is that it can multiplex
 arbitrary complex data structures, not just a vector of bits.
 Any user defined data type will work with ```Mux```.
 
-### Seven Segment Decoder
-
-To generate the Verilog execute:
-```aidl
-sbt run
-```
-then select which App you want to run.
-
 
 ## TODO:
 
+ * decoder
  * more building blocks
- * arithmetic stuff
- * register and counter here or in the next session?
+ * some arithmetic
