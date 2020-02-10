@@ -176,6 +176,8 @@ Any user defined data type will work with ```Mux```.
 
 ### A Decoder
 
+![Decoder](../figures/decoder.svg)
+
 The next exercise is to describe a 2-bit decoder. The test is called
 as follows:
 
