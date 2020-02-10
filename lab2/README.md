@@ -187,6 +187,6 @@ You can find the skeleton of the exercise in ```Decoder.scala```.
 Fill in the missing statement(s). A Chisel ```switch``` statement is probably
 the most elegant solution, but other solutions are valid as well.
 
-## TODO:
+### Addition/Subtraction Circuit
 
- * some arithmetic
+
