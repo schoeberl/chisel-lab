@@ -42,7 +42,7 @@ Project from Existing Source...*
 
 We start as first exercise with a relative simple circuit, a majority voter.
 
-Then navigate to the Chisel component ```Majority``` by following in the Project navigator along: *lab2 - src - main - scala - Majority*.
+Navigate to the Chisel component ```Majority``` by following in the Project navigator along: *lab2 - src - main - scala - Majority*.
 Open ```Majority``` with a double click.
 
 This is a Chisel component that shall implement the majority voting of three
