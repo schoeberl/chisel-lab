@@ -161,7 +161,7 @@ Furthermore, this equation does not work so easily with multi-bit
 values.
 
 A better solution is to conditional assignment, in Chisel
-with ```when``` and ```otherwise```.
+with ```when``` and ```.otherwise```.
 Look it up in Chapter 5 of the Chisel book and implement the
 Multiplexer.
 
@@ -174,9 +174,19 @@ The *cool* thing on the ```Mux``` component is that it can multiplex
 arbitrary complex data structures, not just a vector of bits.
 Any user defined data type will work with ```Mux```.
 
+### A Decoder
+
+The next exercise is to describe a 2-bit decoder. The test is called
+as follows:
+
+```
+sbt "testOnly DecoderSpec"
+```
+
+You can find the skeleton of the exercise in ```Decoder.scala```.
+Fill in the missing statement(s). A Chisel ```switch``` statement is probably
+the most elegant solution, but other solutions are valid as well.
 
 ## TODO:
 
- * decoder
- * more building blocks
  * some arithmetic
