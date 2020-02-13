@@ -1,0 +1,15 @@
+# Scala / Java
+*.class
+*.log
+
+# sbt
+project/
+target/
+
+# Chisel
+*.fir
+*.v
+*.anno.json
+
+# JetBrains
+.idea/
