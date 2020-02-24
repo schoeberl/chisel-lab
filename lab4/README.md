@@ -20,9 +20,11 @@ without an error.
 *[Digital Design with Chisel](http://www.imm.dtu.dk/~masca/chisel-book.html)*
 
    
-### Using Components
+## Using Components
 
-#### Use the Mux2
+The following two exercises teach you how to create and use components/moduls.
+
+### Use the Mux2
 
 We provide a ```Mux2``` component, a 2:1 multiplexer with single-bit inputs.
 For the first exercise edit ```UseMux2```. There you shall create an instance of
@@ -33,7 +35,7 @@ Run the specific test for this exercise with:
  sbt "testOnly UseMux2Spec"
 ```
  
-#### Design a 4:1 Multiplexer
+### Design a 4:1 Multiplexer
 
 In digital design we often build larger, more complex designs by combining
 smaller and simpler components. In this exercise you shall build a 4:1 multiplexer
@@ -50,9 +52,12 @@ Run the test for the 4:1 multiplexer with:
 sbt "testOnly Mux4Spec"
 ```
 
-### Small Sequential Circuits
+## Small Sequential Circuits
 
-#### Build a Two Clock Cycles Delay
+The next four exercise teach you to create and use registers to build
+sequential circuits.
+
+### Build a Two Clock Cycles Delay
 
 The next exercise is a simple circuit containing two registers that form a 2 clock
 cycles delay. This circuit is also used as an input synchronizer for external asynchronous
@@ -67,7 +72,7 @@ delay with:
 sbt "testOnly DelaySpec"
 ```
 
-#### A Free Running Counter
+### A Free Running Counter
 
 Implement a 4-bit free running counter. That means the counter counts from 0 up to
 15 and then restarts at 0. Put your implementation into ```Count15``` and run the
@@ -77,7 +82,7 @@ test with:
 sbt "testOnly Count15Spec"
 ```
 
-#### Counter with a Limit
+### Counter with a Limit
 
 The next counter shall count up till 6 and then restart at 0.
 Put your implementation into ```Count6``` and run the
@@ -87,18 +92,18 @@ test with:
 sbt "testOnly Count6Spec"
 ```
 
-#### An Accumulator
+### An Accumulator
 
 As the last exercise on small sequential circuits implement an accumulator (register).
-Implement in ```Accu``` and test with:
+The accumulator addes the number provided in ```din```. It can be reset to 0 by
+asserting ```setZero```. The accumulator shall be set to 0 on reset.
+Implement the accumulator in ```Accu``` and test it with:
 
 ```
 sbt "testOnly AccuSpec"
 ```
 
-
-
-### Schematic from Chisel Code
+## Schematic from Chisel Code
 
 We have several different ways to specify digital circuits. We can draw block
 diagrams as a visual representation or write Chisel code for simulation and
@@ -106,7 +111,7 @@ synthesis of the circuit. It is important to be able to translate between those
 spcifications. In this part of the exercise you get Chisel code and shall draw
 a schematic of te circuit. Discuss your schematic with a TA.
 
-#### Code Example 1
+### Code Example 1
 
 ```
 when(ok) {
@@ -116,7 +121,9 @@ when(ok) {
 }
 ```
 
-### An App to Generate Verilog (Optional)
+## An App to Generate Verilog (Optional)
+
+This is an optional exercise, if you run out of work during the lab.
 
  * Write an App to generate Verilog for the Mux4 circuit
  * Adapt the .xdc file for the circuit
