@@ -33,7 +33,7 @@ Run the specific test for this exercise with:
  sbt "testOnly UseMux2Spec"
 ```
  
-### Design a 4:1 Multiplexer
+#### Design a 4:1 Multiplexer
 
 In digital design we often build larger, more complex designs by combining
 smaller and simpler components. In this exercise you shall build a 4:1 multiplexer
@@ -49,8 +49,10 @@ Run the test for the 4:1 multiplexer with:
 ```
 sbt "testOnly Mux4Spec"
 ```
- 
-### Build a Two Clock Cycles Delay
+
+### Small Sequential Circuits
+
+#### Build a Two Clock Cycles Delay
 
 The next exercise is a simple circuit containing two registers that form a 2 clock
 cycles delay. This circuit is also used as an input synchronizer for external asynchronous
@@ -65,7 +67,7 @@ delay with:
 sbt "testOnly DelaySpec"
 ```
 
-### A Free Running Counter
+#### A Free Running Counter
 
 Implement a 4-bit free running counter. That means the counter counts from 0 up to
 15 and then restarts at 0. Put your implementation into ```Count15``` and run the
@@ -75,7 +77,7 @@ test with:
 sbt "testOnly Count15Spec"
 ```
 
-### Counter with a Limit
+#### Counter with a Limit
 
 The next counter shall count up till 6 and then restart at 0.
 Put your implementation into ```Count6``` and run the
@@ -85,12 +87,18 @@ test with:
 sbt "testOnly Count6Spec"
 ```
 
-### An Accumulator
+#### An Accumulator
 
 As the last exercise on small sequential circuits implement an accumulator (register).
+Implement in ```Accu``` and test with:
+
+```
+sbt "testOnly AccuSpec"
+```
 
 
-### Schematics from Chisel Code
+
+### Schematic from Chisel Code
 
 We have several different ways to specify digital circuits. We can draw block
 diagrams as a visual representation or write Chisel code for simulation and
@@ -112,23 +120,7 @@ when(ok) {
 
  * Write an App to generate Verilog for the Mux4 circuit
  * Adapt the .xdc file for the circuit
- * Gerate a Vivdao project
- * Synthesize and test
-
-## Not yet used stuff below
-
-### A Multiplexer (Mux)
-
-![Mux](../figures/mux.svg)
-
-A multplexer selects between different input signals. In the above figure
-it is a 2:1 multiplexer. With ```sel``` we route either input ```a``` or
-input ```b``` to output ```y```. We assume in this example that ```a```
-is slected when ```sel``` is ```0``` or ```false```, otherwise  ```b```.
-
-Open the ```Mux2``` component to implement the multiplexer.
-You can test your implementation with:
-```
-sbt "testOnly Mux2Spec"
-```
+ * Generate a Vivdao project
+ * Synthesize
+ * Test the Mux4 in the FPGA
 
