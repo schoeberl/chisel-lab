@@ -50,7 +50,19 @@ Run the test for the 4:1 multiplexer with
 sbt "testOnly Mux4Spec"
 ```
  
+### Build a Two Clock Cycles Delay
 
+The next exercise is a simple circuit containing two registers that form a 2 clock
+cycles delay. This circuit is also used as an input synchronizer for external asynchronous
+signals. Below you find the schematics of this circuit.
+
+![Synchronizer](../figures/synchronizer.svg)
+
+Run the test for the two clock cycles delay with
+
+```
+sbt "testOnly DelaySpec"
+```
 
 ### Schematics from Chisel Code
 
