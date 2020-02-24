@@ -1,7 +1,6 @@
 import chisel3.iotesters.PeekPokeTester
 import org.scalatest._
 
-// Just have a simple Mux2 test here as a reference
 class DelayTest(dut: Delay) extends PeekPokeTester(dut) {
 
   poke(dut.io.din, 0)

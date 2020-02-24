@@ -1,7 +1,6 @@
 import chisel3.iotesters.PeekPokeTester
 import org.scalatest._
 
-// Just have a simple Mux2 test here as a reference
 class UseMux2Test(dut: UseMux2) extends PeekPokeTester(dut) {
 
   poke(dut.io.sel, 0)

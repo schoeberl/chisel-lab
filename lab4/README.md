@@ -44,7 +44,7 @@ and one output (```y```). Select ```a``` when ```sel``` is ```"b00"```,
 
 Before writing Chisel code draw the solution on a sheet of paper and discuss the solution.
 When you are confident in your design (done on paper), code it up in Chisel in ```Mux4```.
-Run the test for the 4:1 multiplexer with
+Run the test for the 4:1 multiplexer with:
 
 ```
 sbt "testOnly Mux4Spec"
@@ -58,11 +58,37 @@ signals. Below you find the schematics of this circuit.
 
 ![Synchronizer](../figures/synchronizer.svg)
 
-Run the test for the two clock cycles delay with
+Implement the two clock cycle delay in ```Delay``` and run the test for the two clock cycles
+delay with:
 
 ```
 sbt "testOnly DelaySpec"
 ```
+
+### A Free Running Counter
+
+Implement a 4-bit free running counter. That means the counter counts from 0 up to
+15 and then restarts at 0. Put your implementation into ```Count15``` and run the
+test with:
+
+```
+sbt "testOnly Count15Spec"
+```
+
+### Counter with a Limit
+
+The next counter shall count up till 6 and then restart at 0.
+Put your implementation into ```Count6``` and run the
+test with:
+
+```
+sbt "testOnly Count6Spec"
+```
+
+### An Accumulator
+
+As the last exercise on small sequential circuits implement an accumulator (register).
+
 
 ### Schematics from Chisel Code
 
