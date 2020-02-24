@@ -1,4 +1,4 @@
-# Lab 4: Components, Small Sequential Circuits
+# Lab 4: Components and Small Sequential Circuits
 
 The lab session will show you how to describe...
 
