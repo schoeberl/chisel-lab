@@ -1,25 +1,39 @@
 # Lab 4: Components and Small Sequential Circuits
 
-The lab session will show you how to describe...
+The lab session will show you how to use components, called modules in Chisel,
+and how to describe small sequential circuits.
 
 We assume that you have downloaded the complete lab material from GitHub
 and it is placed in folder ```chisel-lab```.
 
 Similar to the first two labs you import the projects in IntelliJ.
-We will not repeat these instructions here.
+We will not repeat these instructions here. See the former labs for the
+instruction.
+
+We provide the testing code for your circuits. You have completed all
+(Chisel code) exercises when all tests (run with ```sbt test```) complete
+without an error.
 
 ## Background Reading
 
- * This lab is loosely based on Chapter x and y of
+ * This lab is loosely based on Chapter 2, 4, and 6 of
 *[Digital Design with Chisel](http://www.imm.dtu.dk/~masca/chisel-book.html)*
 
-
    
-### Components
+### Using Components
 
- * Have a Mux2 component given
- * Use it in UseMux, test
- * Build a Mux4 out of Mux2
+#### Use the Mux2
+
+We provide a ```Mux2``` component, a 2:1 multiplexer with single-bit inputs.
+For the first exercise edit ```UseMux2```. There you shall create an instance of
+```Mux2``` and connect it to the signals: ```a```, ```b```, ```sel```, and ```res```.
+Run the specific test for this exercise with:
+
+```
+ sbt "testOnly UseMux2Spec"
+```
+ 
+### Build a Mux4
  
 
 
