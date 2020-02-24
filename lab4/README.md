@@ -33,9 +33,23 @@ Run the specific test for this exercise with:
  sbt "testOnly UseMux2Spec"
 ```
  
-### Build a Mux4
- 
+### Design a 4:1 Multiplexer
 
+In digital design we often build larger, more complex designs by combining
+smaller and simpler components. In this exercise you shall build a 4:1 multiplexer
+out of 2:1 multiplexers (the ```Mux2``` component.) The ```Mux4``` component has
+a 2-bit select input (```sel```), four inputs (```a```, ```b```, ```c```, and ```d```),
+and one output (```y```). Select ```a``` when ```sel``` is ```"b00"```,
+```b``` when ```sel``` is ```"b001"```, and so on.
+
+Before writing Chisel code draw the solution on a sheet of paper and discuss the solution.
+When you are confident in your design (done on paper), code it up in Chisel in ```Mux4```.
+Run the test for the 4:1 multiplexer with
+
+```
+sbt "testOnly Mux4Spec"
+```
+ 
 
 
 ### Schematics from Chisel Code
