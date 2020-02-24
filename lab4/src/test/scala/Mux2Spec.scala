@@ -2,7 +2,7 @@ import chisel3.iotesters.PeekPokeTester
 import org.scalatest._
 
 // TODO: we need a UseMux and a Mux4 tester, but having a Mux2 tester here is fine
-class Mux2Tester(dut: Mux2) extends PeekPokeTester(dut) {
+class Mux2Test(dut: Mux2) extends PeekPokeTester(dut) {
 
   for (a <- 0 to 1) {
     for (b <- 0 to 1) {
@@ -21,6 +21,6 @@ class Mux2Tester(dut: Mux2) extends PeekPokeTester(dut) {
 
 class Mux2Spec extends FlatSpec with Matchers {
   "Mux2 " should "pass" in {
-    chisel3.iotesters.Driver(() => new Mux2) { c => new Mux2Tester(c)} should be (true)
+    chisel3.iotesters.Driver(() => new Mux2) { c => new Mux2Test(c)} should be (true)
   }
 }
