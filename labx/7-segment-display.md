@@ -33,12 +33,12 @@ The first part is to make a 7-segment decoder, which takes a four bit binary val
 
 To show a 0, we would turn on all segments, except G (and the decimal point, DP).
 
-Complete the following table, indicating what segments should be lit when showing which number:
+Complete the following table, indicating what segments should be lit when showing which number ((Unintuitively) the 7-segment display on the Basys 3 board uses logic 0 to indicate the LED being lit):
 ```
 ╔════╦═══╦═══╦═══╦═══╦═══╦═══╦═══╗
 ║    ║ A ║ B ║ C ║ D ║ E ║ F ║ G ║
 ╠════╬═══╬═══╬═══╬═══╬═══╬═══╬═══╣
-║ 0  ║ 1 ║ 1 ║ 1 ║ 1 ║ 1 ║ 1 ║ 0 ║
+║ 0  ║ 0 ║ 0 ║ 0 ║ 0 ║ 0 ║ 0 ║ 1 ║
 ╠════╬═══╬═══╬═══╬═══╬═══╬═══╬═══╣
 ║ 1  ║   ║   ║   ║   ║   ║   ║   ║
 ╠════╬═══╬═══╬═══╬═══╬═══╬═══╬═══╣
@@ -92,7 +92,7 @@ class SevenSegDecoder() extends Module {
     
     
     //Don't forget to connect the output of the module
-    io.out := "b1010101".U
+    io.out := "b1010101".U //dummy output
 }
 ```
 
@@ -116,13 +116,13 @@ For the number 8, you would expect to see
 ```scala
 def print7Segment(x:BigInt,y: Int){
     println(y.toHexString)                       //Print the hexadecimal value
-    println(if ((x & 0x40) != 0) " _"  else " ") //Print top "_"
-    print(if((x & 0x2) != 0) "|" else " ")       //Print top left "|"
-    print(if((x & 0x1) != 0) "_" else " ")       //Print middle "_"
-    println(if((x & 0x20) != 0) "|" else " ")    //Print top right "|"
-    print(if((x & 0x4) != 0) "|" else " ")       //Print lower left "|"
-    print(if((x & 0x8) != 0) "_" else " ")       //Print lower "_"
-    println(if((x & 0x10) != 0) "|" else " ")    //Print lower right "|"
+    println(if ((x & 0x40) == 0) " _"  else " ") //Print top "_"
+    print(if((x & 0x2) == 0) "|" else " ")       //Print top left "|"
+    print(if((x & 0x1) == 0) "_" else " ")       //Print middle "_"
+    println(if((x & 0x20) == 0) "|" else " ")    //Print top right "|"
+    print(if((x & 0x4) == 0) "|" else " ")       //Print lower left "|"
+    print(if((x & 0x8) == 0) "_" else " ")       //Print lower "_"
+    println(if((x & 0x10) == 0) "|" else " ")    //Print lower right "|"
     println()                                    //Print empty line
 }
 

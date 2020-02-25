@@ -21,18 +21,18 @@ object top{
 		
 		
 		//Don't forget to connect the output of the module
-		io.out := "b1010101".U
+		io.out := "b1010101".U //dummy output
 	}
 
 	def print7Segment(x:BigInt,y: Int){
 		println(y.toHexString)                       //Print the hexadecimal value
-		println(if ((x & 0x40) != 0) " _"  else " ") //Print top "_"
-		print(if((x & 0x2) != 0) "|" else " ")       //Print top left "|"
-		print(if((x & 0x1) != 0) "_" else " ")       //Print middle "_"
-		println(if((x & 0x20) != 0) "|" else " ")    //Print top right "|"
-		print(if((x & 0x4) != 0) "|" else " ")       //Print lower left "|"
-		print(if((x & 0x8) != 0) "_" else " ")       //Print lower "_"
-		println(if((x & 0x10) != 0) "|" else " ")    //Print lower right "|"
+		println(if ((x & 0x40) == 0) " _"  else " ") //Print top "_"
+		print(if((x & 0x2) == 0) "|" else " ")       //Print top left "|"
+		print(if((x & 0x1) == 0) "_" else " ")       //Print middle "_"
+		println(if((x & 0x20) == 0) "|" else " ")    //Print top right "|"
+		print(if((x & 0x4) == 0) "|" else " ")       //Print lower left "|"
+		print(if((x & 0x8) == 0) "_" else " ")       //Print lower "_"
+		println(if((x & 0x10) == 0) "|" else " ")    //Print lower right "|"
 		println()                                    //Print empty line
 	}
 
