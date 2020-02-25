@@ -114,20 +114,52 @@ a schematic of te circuit. Discuss your schematic with a TA.
 ### Code Example 1
 
 ```
-when(ok) {
-  ligth := GREEN
-} .otherwise {
-  light := RED
-}
+  when(ok) {
+    ligth := GREEN
+  } .otherwise {
+    light := RED
+  }
+```
+
+### Code Example 2
+
+```
+  val dout = WireDefault(0.U)
+
+  switch(sel) {
+    is(0.U) { dout := 0.U }
+    is(1.U) { dout := 11.U }
+    is(2.U) { dout := 22.U }
+    is(3.U) { dout := 33.U }
+    is(4.U) { dout := 44.U }
+    is(5.U) { dout := 55.U }
+  }
+
+```
+
+### Code Example 3
+
+```
+  val regAcc = RegInit(0.U(8.W))
+
+  switch(sel) {
+    is(0.U) { regAcc := regAcc}
+    is(1.U) { regAcc := 0.U}
+    is(2.U) { regAcc := regAcc + din}
+    is(3.U) { regAcc := regAcc - din}
+  }
 ```
 
 ## An App to Generate Verilog (Optional)
 
-This is an optional exercise, if you run out of work during the lab.
+This is an optional exercise, if you run out of work during the lab ;-)
 
  * Write an App to generate Verilog for the Mux4 circuit
+ (an object that extends App, in ```Mux4.scala```)
  * Adapt the .xdc file for the circuit
+ (e.g., start from the Basis .xdc file in the root of the lab folders)
  * Generate a Vivdao project
  * Synthesize
- * Test the Mux4 in the FPGA
+ * Configure the FPGA
+ * Test the Mux4 in the FPGA with the switches and one LED
 
