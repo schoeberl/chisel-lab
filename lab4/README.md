@@ -109,7 +109,7 @@ We have several different ways to specify digital circuits. We can draw block
 diagrams as a visual representation or write Chisel code for simulation and
 synthesis of the circuit. It is important to be able to translate between those
 spcifications. In this part of the exercise you get Chisel code and shall draw
-a schematic of te circuit. Discuss your schematic with a TA.
+a schematic of the circuit. Discuss your schematic with a TA.
 
 ### Code Example 1
 
