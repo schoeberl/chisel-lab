@@ -33,8 +33,9 @@ For lab sessions where no link is given, we will provide the material in
 
  * [Lab 1: Hello World in Chisel](lab1)
  * [Lab 2: Combinational Circuits in Chisel](lab2)
- * Lab 3: paper and pencil on timing
+ * Lab 3: Paper and pencil on timing
  * [Lab 4: Components and Small Sequential Circuits](lab4)
+ * Lab 5: 7-Segment display
 
 ## Resources
 
