@@ -17,7 +17,7 @@ class SevenSegDecoderTester(dut: SevenSegDecoder) extends PeekPokeTester(dut) {
 		println()                                      //Print empty line
 	}
 	  
-  for (value <- 0 until 16) {
+	for (value <- 0 until 16) {
 		poke(dut.io.sw, value) //We apply a value to the input
 		println(peek(dut.io.seg).toString(2).reverse.padTo(7,'0').reverse) //And check the value on the output.
 		print7Segment(peek(dut.io.seg),value) //Here we print the result, as it would look on the 7-segment display.
