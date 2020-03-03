@@ -14,6 +14,8 @@ We provide the testing code for your circuits. You have completed all
 (Chisel code) exercises when all tests (run with ```sbt test```) complete
 without an error.
 
+Have fun!
+
 ## Background Reading
 
  * This lab is loosely based on Chapter 2, 4, and 6 of
