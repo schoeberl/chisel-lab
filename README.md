@@ -35,7 +35,7 @@ For lab sessions where no link is given, we will provide the material in
  * [Lab 2: Combinational Circuits in Chisel](lab2)
  * Lab 3: Paper and pencil on timing
  * [Lab 4: Components and Small Sequential Circuits](lab4)
- * [Lab 5: 7-Segment display](lab5)
+ * [Lab 5: Seven Segment Decoder](lab5)
 
 ## Resources
 
