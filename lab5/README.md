@@ -8,8 +8,8 @@ machine.
 
 You have to provide the table for the seven segment decoder
 in ```SevenSegDecoder.scala```.
-As an example for the codes see:
-[Codes on Wikipedia](https://en.wikipedia.org/wiki/Seven-segment_display)
+Read the [Basys 3](https://reference.digilentinc.com/reference/programmable-logic/basys-3/start?redirect=1)
+documentation and the .xdc file on which segment is connected to which pin.
 
 The project contains a nice tester that prints out your encoding.
 Therefore, you can work on your table until getting it right without
