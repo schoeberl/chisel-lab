@@ -4,7 +4,14 @@ This lab is your next step towards your vending machine.
 It is described in  more detail in the **Vending Machine Specification**
 (available in DTU Inside), Exercise 1b.
 
-The circuit consist of the seven-segment decoder and the test circuit
+The circuit consist of the seven-segment decoder and the test circuit.
+The test circuit shall drive the seven-segment display with a counter
+to show all possible values. The counter shall count at a frequency
+of around 2 Hz for easy following by a human.
+
+For a start you can connect the clock input to a button for manual
+clocking. However, the final solution shall use the 100 MHz clock and additional
+hardware is needed to produce the 2 Hz timing.
 
 Reuse your table from last week (lab5) and add it to ```SevenSegDec.scala```.
 
