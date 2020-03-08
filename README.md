@@ -36,6 +36,7 @@ For lab sessions where no link is given, we will provide the material in
  * Lab 3: Paper and pencil on timing
  * [Lab 4: Components and Small Sequential Circuits](lab4)
  * [Lab 5: Seven Segment Decoder](lab5)
+ * [Lab 6: Test Drive the Seven-Segment Display](lab6)
 
 ## Resources
 
