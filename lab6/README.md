@@ -37,6 +37,10 @@ Then create a Vivado project for the 7-segment display test, synthesize
 your design, and configure the FPGA.
 
 An .xdc file (```sevenseg-cnt.xdc```) with the pin definitions is available.
+For more information look into the
+[Basys 3](https://reference.digilentinc.com/reference/programmable-logic/basys-3/start?redirect=1)
+documentation. You can also find the pin definitions in the
+[Schematic of the IO](https://reference.digilentinc.com/basys3/refmanual#basic_io).
 
 When your design is working in the FPGA, show it to a TA for an ok
 tick in the list.
