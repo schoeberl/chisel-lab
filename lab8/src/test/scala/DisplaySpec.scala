@@ -6,8 +6,8 @@ class DisplayTest(dut: Display) extends PeekPokeTester(dut) {
 }
 
 class DisplaySpec extends FlatSpec with Matchers {
-	"DisplayTest " should "pass" in {
-		chisel3.iotesters.Driver.execute(Array("--generate-vcd-output", "on"), () => new Display)
-		{ c => new DisplayTest(c)} should be (true)
-	}
+  "DisplayTest " should "pass" in {
+    chisel3.iotesters.Driver.execute(Array("--generate-vcd-output", "on"), () => new Display)
+    { c => new DisplayTest(c)} should be (true)
+  }
 }

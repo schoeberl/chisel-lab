@@ -9,9 +9,10 @@ class SevenSegDec extends Module {
 
   val sevSeg = WireDefault(0.U)
 
-  // *** add our table from Lab 5 here
+  // *** add your table from Lab 5 here
 
   // *** end adding the table
+
   io.out := sevSeg
 }
 
