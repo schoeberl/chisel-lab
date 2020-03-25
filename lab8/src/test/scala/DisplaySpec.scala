@@ -2,6 +2,8 @@ import chisel3.iotesters.PeekPokeTester
 import org.scalatest._
 
 class DisplayTest(dut: Display) extends PeekPokeTester(dut) {
+
+  poke(dut.io.sw, 0x1234)
   step(100)
 }
 
