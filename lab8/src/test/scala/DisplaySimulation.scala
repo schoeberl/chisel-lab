@@ -1,7 +1,9 @@
 import scala.swing._
 import scala.swing.event._
 
-
+/**
+  * Work-in-progress: shall become a simulation of the Basys3 display
+  */
 class DisplaySimulation extends MainFrame {
   title = "Display Simulator - Work in Progress"
   preferredSize = new Dimension(320, 240)

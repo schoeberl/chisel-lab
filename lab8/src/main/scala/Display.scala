@@ -5,14 +5,14 @@ import chisel3.util._
   * This is the top level to develop the display multiplexing circuit.
   * The multiplexing circuit is in the DisplayMultiplexer.
   */
-class Display extends Module {
+class Display(maxCount: Int) extends Module {
   val io = IO(new Bundle {
     val sw = Input(UInt(16.W))
     val seg = Output(UInt(7.W))
     val an = Output(UInt(4.W))
   })
 
-  val dispMux = Module(new DisplayMultiplexer())
+  val dispMux = Module(new DisplayMultiplexer(maxCount))
 
   // Simulate the price and sum input with the switches
   dispMux.io.price := io.sw(7, 0)
@@ -25,5 +25,5 @@ class Display extends Module {
 
 // generate Verilog
 object Display extends App {
-  chisel3.Driver.execute(args, () => new Display())
+  chisel3.Driver.execute(args, () => new Display(100000))
 }

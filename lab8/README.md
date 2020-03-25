@@ -4,30 +4,30 @@ This lab is your next step towards your vending machine.
 It is described in more detail in the [Vending Machine Specification](https://cn.inside.dtu.dk/cnnet/filesharing/download/e712d72e-278e-4fef-a6ed-03eb20134acc),
 Exercise 2.
 
-The circuit consist of the multiplexed seven-segment display.
+The circuit shall be a multiplexed seven-segment display.
 The switches are used as input for the four digits.
 Similar to last lab you need to generate timing with counter
 to switch the display and drive the multiplexer.
 
-Reuse ```SevenSegDec.scala``` from Lab 6.
+Reuse ```SevenSegDec.scala``` from Lab 6. Run:
 
 ```
 sbt test
 ```
 
 and explore the waveform with GTKWave. The test runs just for
-100 clock cycles. To see any useful results you need to switch
+200 clock cycles. To see any useful results you need to switch
 your multiplexer with a high frequency (your counter counts only
-up to maybe a single digit number).
+up to a few clock cycles).
 
 When you are happy with the test results, change your maximum count
-value for about 1 kHz, and generate Verilog with:
+value to generate a tick at around 1 kHz, and generate Verilog with:
 
 ```
 sbt run
 ```
 
-Then create a Vivado project for the display test, synthesize
+Then create a Vivado project for the display multplexer, synthesize
 your design, and configure the FPGA.
 
 An .xdc file (```display.xdc```) with the pin definitions is available.

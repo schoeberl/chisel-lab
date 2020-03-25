@@ -1,7 +1,7 @@
 import chisel3._
 import chisel3.util._
 
-class DisplayMultiplexer extends Module {
+class DisplayMultiplexer(maxCount: Int) extends Module {
   val io = IO(new Bundle {
     val sum = Input(UInt(8.W))
     val price = Input(UInt(8.W))
