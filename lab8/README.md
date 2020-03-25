@@ -1,8 +1,10 @@
-# Lab 8 and 9: Display Multiplexing
+# Lab 8 and 9: Multiplexed Seven-Segment Display
 
 This lab is your next step towards your vending machine.
-It is described in  more detail in the **Vending Machine Specification**
-(available in DTU Inside), Exercise 1b.
+It is described in  more detail in the [Vending Machine Specification](https://cn.inside.dtu.dk/cnnet/filesharing/download/e712d72e-278e-4fef-a6ed-03eb20134acc),
+Exercise 2.
+
+## Below old text, update it
 
 The circuit consist of the seven-segment decoder and the test circuit.
 The test circuit shall drive the seven-segment display with a counter

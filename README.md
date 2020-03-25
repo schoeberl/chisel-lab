@@ -30,6 +30,8 @@ pull requests. Even the fix of a small typo is appreciated.
 The following list gives an overview of all lab sessions and assignments.
 For lab sessions where no link is given, we will provide the material in
 [DTU Inside](https://www.inside.dtu.dk).
+For the Vending Machine related labs (week 5, 6, 8, 9, 10, and 12) please
+read the [Vending Machine Specification](https://cn.inside.dtu.dk/cnnet/filesharing/download/e712d72e-278e-4fef-a6ed-03eb20134acc).
 
  * [Lab 1: Hello World in Chisel](lab1)
  * [Lab 2: Combinational Circuits in Chisel](lab2)
@@ -37,6 +39,9 @@ For lab sessions where no link is given, we will provide the material in
  * [Lab 4: Components and Small Sequential Circuits](lab4)
  * [Lab 5: Seven Segment Decoder](lab5)
  * [Lab 6: Test Drive the Seven-Segment Display](lab6)
+ * Lab 7: Paper and pencil on FSM
+ * [Lab 8: Multiplexed Seven-Segment Display](lab8)
+ * [Lab 9: Multiplexed Seven-Segment Display (Continuation)](lab8)
 
 ## Resources
 
