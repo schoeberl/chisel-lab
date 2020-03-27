@@ -39,4 +39,15 @@ documentation. You can also find the pin definitions in the
 When your design is working in the FPGA, show it to a TA for an OK
 tick in the list.
 
+For those not having an FPGA available at the moment there is a simulation
+of the 7-segment display available. It is not perfect, but you can test
+if you get your multiplexing correct. As with the waveform tester,
+switch the display at a higher frequency (e.g., every 20 clock cycles), to
+see results in the simulation.
+
+You run the simulation of the display with:
+
+```
+sbt "test:runMain DisplaySimulation"
+```
 
