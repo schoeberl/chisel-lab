@@ -13,63 +13,83 @@ class DisplaySimulation extends MainFrame {
     List(23, 108, 40, 10), List(10, 63, 10, 50),
     List(10, 10, 10, 50), List(23, 56, 40, 10))
 
+  val digits = Array(0xab, 0x00, 0x07, 0xff)
+  var inVal = 0
 
-  val digits = Array(true, true, false, true, true, false, true)
+  def draw7(g: Graphics2D, x: Int, y: Int, seg: Int): Unit = {
+    var shift = seg
+    for (seg <- sevenSeg) {
+      if ((shift & 0x01) != 0) {
+        g.setColor(Color.red)
+      } else {
+        g.setColor(Color.black)
+      }
+      shift >>= 1
+      g.fillRect(seg(0) + x, seg(1) + y, seg(2), seg(3))
+    }
+  }
 
-
-  title = "Display Simulator - Work in Progress"
-  preferredSize = new Dimension(400, 600)
+  title = "Display Simulator"
+  preferredSize = new Dimension(400, 400)
   // contents = new Label("Here is the contents!")
-  contents = new GridPanel(3, 2) {
-    hGap = 10
-    vGap = 10
-    contents += new Button {
-      text = "Press Me!"
-      reactions += {
-        case ButtonClicked(_) => text = "Hello Chisel!"
+  contents = new GridPanel(2, 1) {
+    hGap = 50
+    vGap = 50
+
+    contents += new Panel {
+      override def paintComponent(g: Graphics2D): Unit = {
+        val xOff = 20
+        val yOff = 20
+        for (i <- 0 until 4) {
+          draw7(g, xOff + i*90, yOff, digits(i))
+        }
+        println("repaint")
       }
     }
 
+    // contents += new Panel {}
+
+    contents += new GridPanel(3, 2) {
+      hGap = 30
+      vGap = 30
+
+      val label = new Label("1234")
+      contents += label
+      contents += new Panel {}
 
 
-    contents += new Panel {
-      background = Color.white
-      var path = new geom.GeneralPath
-      path.moveTo(0, 0)
-      path.lineTo(100, 100)
-      repaint()
-      override def paintComponent(g: Graphics2D): Unit = {
-        g.drawString("Press left mouse button and drag to paint.", 10, 26)
-        g.setColor(Color.black)
-        g.draw(path)
-        g.setColor(Color.red)
-        // g.fillPolygon(Array(10, 20, 40), Array(60, 30, 10), 3)
-        //g.fillRect(10, 20, 3, 10)
-        //g.setColor(Color.blue)
-        //g.fillRect(30, 30, 3, 10)
-        println("repaint")
-        var cnt = 0
-        for (seg <- sevenSeg) {
-          if (digits(cnt)) {
-            g.setColor(Color.red)
-          } else {
-            g.setColor(Color.black)
+      val textField = new TextField {
+        columns = 4
+        text = "1234"
+      }
 
+      contents += textField
+
+      // contents += new ToggleButton { text = "Toggle" }
+      contents += new Button {
+        text = "Update"
+        reactions += {
+          case ButtonClicked(_) => {
+            label.text = textField.text
+            inVal = Integer.parseInt(textField.text, 16)
+            println(inVal)
           }
-          cnt += 1
-          g.fillRect(seg(0), seg(1), seg(2), seg(3))
+
         }
       }
     }
-    contents += new Label("Hallo Label")
-    // contents += new ToggleButton { text = "Toggle" }
-
   }
 }
 
 object DisplaySimulation extends App {
 
-  val ui = new DisplaySimulation
-  ui.visible = true
+  val display = new DisplaySimulation
+  display.visible = true
+  for (i <- 0 until 255) {
+    Thread.sleep(1000)
+    display.digits(3) = i
+    display.repaint()
+
+  }
   println("End of main function")
 }
