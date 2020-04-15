@@ -42,7 +42,7 @@ read the [Vending Machine Specification](https://cn.inside.dtu.dk/cnnet/fileshar
  * Lab 7: Paper and pencil on FSM
  * [Lab 8: Multiplexed Seven-Segment Display](lab8)
  * [Lab 9: Multiplexed Seven-Segment Display (Continuation)](lab8)
- * [Lab 10, 11: The Vending Machine](vending)
+ * [Lab 10, 12: The Vending Machine](vending)
 
 ## Resources
 
