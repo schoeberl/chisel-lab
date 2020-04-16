@@ -1,7 +1,7 @@
 import chisel3._
 import chisel3.util._
 
-class VendingMachine extends Module {
+class VendingMachine(maxCount: Int) extends Module {
   val io = IO(new Bundle {
     val price = Input(UInt(5.W))
     val coin2 = Input(Bool())
@@ -28,7 +28,7 @@ class VendingMachine extends Module {
 
 // generate Verilog
 object VendingMachine extends App {
-  chisel3.Driver.execute(args, () => new VendingMachine())
+  chisel3.Driver.execute(args, () => new VendingMachine(100000))
 }
 
 
