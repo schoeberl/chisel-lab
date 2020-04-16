@@ -53,25 +53,34 @@ class VendingSimulation extends MainFrame {
       hGap = 30
       vGap = 30
 
-      val label = new Label("1234")
+      val label = new Label("This is work in progress")
       contents += label
       contents += new Panel {}
 
 
-      val textField = new TextField {
-        columns = 4
-        text = "1234"
-      }
-
-      contents += textField
-
       contents += new Button {
-        text = "Update"
+        text = "2 kr."
         reactions += {
           case ButtonClicked(_) => {
-            label.text = textField.text
-            inVal = Integer.parseInt(textField.text, 16)
-            println(inVal)
+            println("2 kr. clicked")
+          }
+        }
+      }
+
+      contents += new Button {
+        text = "5 kr."
+        reactions += {
+          case ButtonClicked(_) => {
+            println("5 kr. clicked")
+          }
+        }
+      }
+
+      contents += new Button {
+        text = "Buy"
+        reactions += {
+          case ButtonClicked(_) => {
+            println("Buy clicked")
           }
         }
       }
