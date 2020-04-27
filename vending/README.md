@@ -40,10 +40,22 @@ Furthermore, we can also run the vending machine hardware with a simulation
 of the Basys3 board, as follows:
 
 ```
-sbt "test:runMain VendingSimulation"
+sbt test:run
 ```
 
-However, this simulation is not yet complete. It will be extended in the next
-days. You can get an updated version with ```git pull``` (when you have
-retrived the repo with git clone) or by downloading a new .zip file and copying
-the new ```VendingSimulation.scala``` to your working folder.
+The simulation contains the 7-segment  display simulation that is included
+in lab8. As with the waveform tester, switch the display at a higher
+frequency (e.g., every 20 clock cycles) to avoid simulating forever.
+
+The simulation contains three buttons for the VM that are connected to
+the inputs ```con2```, ```con5```, and ```buy```. With one click you can
+toggle to pressed, with another clock you can toggle back to release.
+The status is also written out to the command line.
+
+The ```Exit``` button stops the simulation.
+
+The next row simulates the 16 green LEDs. Two LEDs are connected to
+```releaseCan``` and ```alarm```.
+
+The bottom row contains 16 check boxes to simulate the 16 switches.
+The right 5 check boxes are connected to the ```price``` input.

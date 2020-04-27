@@ -157,6 +157,12 @@ class VendingDriver(dut: VendingMachine, d: VendingSimulation) extends PeekPokeT
      */
     d.ledVal(15) = peek(dut.io.releaseCan) == 1
     d.ledVal(0) = peek(dut.io.alarm) == 1
+    var price = 0
+    for (i <- 0 until 5) {
+      price <<= 1
+      price += (if (d.switches(4-i).selected) 1 else 0)
+    }
+    poke(dut.io.price, price)
     poke(dut.io.coin2, d.btnVal(0))
     poke(dut.io.coin5, d.btnVal(1))
     poke(dut.io.buy, d.btnVal(2))
