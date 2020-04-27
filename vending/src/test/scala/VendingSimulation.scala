@@ -7,7 +7,7 @@ import chisel3.iotesters.PeekPokeTester
 
 
 /**
-  * Simulation of the Basys3 interface for the Vending Machine
+  * Simulation of the Basys3 board for the Vending Machine
   */
 class VendingSimulation extends MainFrame {
 
@@ -47,7 +47,6 @@ class VendingSimulation extends MainFrame {
 
   title = "Basys3 Simulator"
   preferredSize = new Dimension(400, 600)
-  // contents = new Label("Here is the contents!")
   contents = new GridPanel(3, 1) {
     hGap = 50
     vGap = 50
@@ -111,11 +110,7 @@ class VendingSimulation extends MainFrame {
     }
 
     contents += new GridPanel(1, 6) {
-/*
-      hGap = 30
-      vGap = 30
 
-*/
       for (i <- 0 until 16) {
         contents += new GridPanel(4, 1) {
           contents += new Panel {}
@@ -139,7 +134,6 @@ class VendingSimulation extends MainFrame {
 class VendingDriver(dut: VendingMachine, d: VendingSimulation) extends PeekPokeTester(dut) {
 
   while (d.running) {
-    // poke(dut.io.sw, d.inVal)
     step(4)
     var an = peek(dut.io.an).toInt
     val seg = peek(dut.io.seg).toInt
@@ -150,11 +144,6 @@ class VendingDriver(dut: VendingMachine, d: VendingSimulation) extends PeekPokeT
       an >>= 1
     }
 
-    /* Test check boxes and LEDs
-    for (i <- 0 until 16) {
-      d.ledVal(i) = d.switches(i).selected
-    }
-     */
     d.ledVal(15) = peek(dut.io.releaseCan) == 1
     d.ledVal(0) = peek(dut.io.alarm) == 1
     var price = 0
