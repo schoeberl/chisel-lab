@@ -7,7 +7,7 @@ import chisel3.iotesters.PeekPokeTester
 
 
 /**
-  * Work-in-progress: shall become a simulation of the Basys3 display
+  * Simulation of the Basys3 interface for the Vending Machine
   */
 class VendingSimulation extends MainFrame {
 
@@ -16,7 +16,10 @@ class VendingSimulation extends MainFrame {
     List(10, 10, 10, 50), List(23, 56, 40, 10))
 
   val digits = Array(0x00, 0x00, 0x00, 0x00)
-  var inVal = 0x1234
+  var ledVal = new Array[Boolean](16)
+  val switches = new Array[CheckBox](16)
+  val btn = new Array[ToggleButton](3)
+  var btnVal = new Array[Boolean](3)
   var running = true
 
   def draw7(g: Graphics2D, x: Int, y: Int, seg: Int): Unit = {
@@ -32,10 +35,20 @@ class VendingSimulation extends MainFrame {
     }
   }
 
+  def drawLed(g: Graphics2D, on: Boolean): Unit = {
+    if (on) {
+      g.setColor(Color.green)
+    } else {
+      g.setColor(Color.black)
+    }
+    g.fillRect(5, 5, 20, 8)
+
+  }
+
   title = "Basys3 Simulator"
-  preferredSize = new Dimension(400, 400)
+  preferredSize = new Dimension(400, 600)
   // contents = new Label("Here is the contents!")
-  contents = new GridPanel(2, 1) {
+  contents = new GridPanel(3, 1) {
     hGap = 50
     vGap = 50
 
@@ -49,42 +62,41 @@ class VendingSimulation extends MainFrame {
       }
     }
 
-    contents += new GridPanel(3, 2) {
+    contents += new GridPanel(2, 16) {
       hGap = 30
       vGap = 30
 
-      val label = new Label("This is work in progress")
-      contents += label
-      contents += new Panel {}
-
-
-      contents += new Button {
+      btn(0) = new ToggleButton {
         text = "2 kr."
         reactions += {
           case ButtonClicked(_) => {
-            println("2 kr. clicked")
+            btnVal(0) = this.selected
+            println("2 kr. " + (if (btnVal(0)) "on" else "off"))
           }
         }
       }
 
-      contents += new Button {
+      btn(1) = new ToggleButton {
         text = "5 kr."
         reactions += {
           case ButtonClicked(_) => {
-            println("5 kr. clicked")
+            btnVal(1) = this.selected
+            println("5 kr. " + (if (btnVal(1)) "on" else "off"))
           }
         }
       }
 
-      contents += new Button {
+      btn(2) = new ToggleButton {
         text = "Buy"
         reactions += {
           case ButtonClicked(_) => {
-            println("Buy clicked")
+            btnVal(2) = this.selected
+            println("Buy " + (if (btnVal(2)) "on" else "off"))
           }
         }
       }
 
+      contents ++= btn
       contents += new Panel {}
 
       contents += new Button {
@@ -94,6 +106,29 @@ class VendingSimulation extends MainFrame {
             running = false
             closeOperation()
           }
+        }
+      }
+    }
+
+    contents += new GridPanel(1, 6) {
+/*
+      hGap = 30
+      vGap = 30
+
+*/
+      for (i <- 0 until 16) {
+        contents += new GridPanel(4, 1) {
+          contents += new Panel {}
+          contents += new Panel() {
+            override def paintComponent(g: Graphics2D): Unit = {
+              drawLed(g, ledVal(15-i))
+            }
+
+          }
+          val c = new CheckBox("")
+          switches(15-i) = c
+          contents += c
+          contents += new Panel {}
         }
       }
     }
@@ -114,6 +149,18 @@ class VendingDriver(dut: VendingMachine, d: VendingSimulation) extends PeekPokeT
       }
       an >>= 1
     }
+
+    /* Test check boxes and LEDs
+    for (i <- 0 until 16) {
+      d.ledVal(i) = d.switches(i).selected
+    }
+     */
+    d.ledVal(15) = peek(dut.io.releaseCan) == 1
+    d.ledVal(0) = peek(dut.io.alarm) == 1
+    poke(dut.io.coin2, d.btnVal(0))
+    poke(dut.io.coin5, d.btnVal(1))
+    poke(dut.io.buy, d.btnVal(2))
+
     d.repaint()
     Thread.sleep(10)
   }
