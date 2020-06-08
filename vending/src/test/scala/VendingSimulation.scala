@@ -28,7 +28,7 @@ class VendingSimulation extends MainFrame {
       if ((shift & 0x01) != 0) {
         g.setColor(Color.red)
       } else {
-        g.setColor(Color.black)
+        g.setColor(Color.gray)
       }
       shift >>= 1
       g.fillRect(seg(0) + x, seg(1) + y, seg(2), seg(3))
@@ -39,10 +39,8 @@ class VendingSimulation extends MainFrame {
     if (on) {
       g.setColor(Color.green)
     } else {
-      g.setColor(Color.black)
     }
-    g.fillRect(5, 5, 20, 8)
-
+    g.fillRect(5, 5, 15, 8)
   }
 
   title = "Basys3 Simulator"
@@ -53,6 +51,9 @@ class VendingSimulation extends MainFrame {
 
     contents += new Panel {
       override def paintComponent(g: Graphics2D): Unit = {
+        g.setColor(Color.black)
+        g.fillRect(10, 10, 380, 143)
+
         val xOff = 20
         val yOff = 20
         for (i <- 0 until 4) {
