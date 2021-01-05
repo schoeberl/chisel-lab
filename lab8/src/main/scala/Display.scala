@@ -25,5 +25,5 @@ class Display(maxCount: Int) extends Module {
 
 // generate Verilog
 object Display extends App {
-  chisel3.Driver.execute(args, () => new Display(100000))
+  (new chisel3.stage.ChiselStage).emitVerilog(new Display(100000))
 }

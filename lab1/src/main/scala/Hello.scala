@@ -30,5 +30,5 @@ class Hello extends Module {
  */
 object HelloMain extends App {
   println("Hello World, I will now generate the Verilog file!")
-  chisel3.Driver.execute(Array[String](), () => new Hello())
+  (new chisel3.stage.ChiselStage).emitVerilog(new Hello())
 }

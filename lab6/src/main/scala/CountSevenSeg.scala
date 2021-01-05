@@ -20,5 +20,5 @@ class CountSevenSeg extends Module {
 
 // generate Verilog
 object CountSevenSeg extends App {
-  chisel3.Driver.execute(args, () => new CountSevenSeg())
+  (new chisel3.stage.ChiselStage).emitVerilog(new CountSevenSeg())
 }
