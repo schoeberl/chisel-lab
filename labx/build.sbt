@@ -2,6 +2,11 @@ scalaVersion := "2.12.8"
 
 scalacOptions := Seq("-Xsource:2.11")
 
+// Suppress "there were X feature warnings; re-run with -feature for details".
+// These appear because chisel use a language feature that's not available in
+// all scala implementations.
+scalacOptions += "-language:reflectiveCalls"
+
 resolvers ++= Seq(
   Resolver.sonatypeRepo("snapshots"),
   Resolver.sonatypeRepo("releases")
