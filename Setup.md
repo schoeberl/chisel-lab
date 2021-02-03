@@ -5,7 +5,7 @@ This documents describes how to setup all tools on Linux/Ubuntu
 and on Windows.
 Here is a summary of the tools we need:
 
- * [Java OpenJDK 8](https://adoptopenjdk.net/)
+ * [Java OpenJDK 8 or later](https://adoptopenjdk.net/)
  * [sbt](https://www.scala-sbt.org/)
  * [IntelliJ](https://www.jetbrains.com/idea/download/) (the free Community version)
  * [Vivado WebPACK](https://www.xilinx.com/products/design-tools/vivado/vivado-webpack.html)
@@ -28,8 +28,7 @@ for this virtual machine. Note, that this VM is BIG. The .zip file is 44 GB.
 
 Chisel is *just* a library for Scala. And Scala is just a language that executes
 on the Java virtual machine (JVM) and uses the Java library. Therefore, you need to have
-[Java OpenJDK 8](https://adoptopenjdk.net/) installed on your laptop.
-*It is important to use version 8 (also called 1.8) of Java, not a newer one.*
+[Java OpenJDK 8 or later](https://adoptopenjdk.net/) installed on your laptop.
 
 For working on the command line you should also install
 [sbt](https://www.scala-sbt.org/), the Scala build tool.
@@ -85,7 +84,7 @@ Instead of running the apt commands manually you can also run the provided ```se
 ## Windows 10
 
  * Install Vivado (see above) and the Digilent board files
- * Install OpenJDK 8 from [AdoptOpenJDK](https://adoptopenjdk.net/)
+ * Install OpenJDK 8 or later from [AdoptOpenJDK](https://adoptopenjdk.net/)
  * Install [sbt](https://www.scala-sbt.org/)
  * Install [IntelliJ](https://www.jetbrains.com/idea/download/)
    * The community edition
@@ -93,10 +92,10 @@ Instead of running the apt commands manually you can also run the provided ```se
  * Start IntelliJ to finish the setup
    * Select the light UI theme (if you prefer)
    * On the featured plugins select Install for Scala
-   * When importing a project, *select the JDK 1.8* you installed before (not Java 11!)
+   * When importing a project, select the JDK you installed before
      * On Project JDK select *New*
      * Select *JDK*
-     * Select the path to your OpenJDK 8 installation, usually ```C:\Program Files\AdoptOpenJDK\jdk-8.0.232.09-hotspot\```
+     * Select the path to your OpenJDK 8 installation, usually something like ```C:\Program Files\AdoptOpenJDK\jdk-8.0.232.09-hotspot\```
  * Install [GTKWave](http://gtkwave.sourceforge.net/)
    * Put a link to the executable on the desktop
  * Copy the PDF of the [Chisel Book](http://www.imm.dtu.dk/~masca/chisel-book.html) on the desktop
@@ -119,7 +118,7 @@ Vivado is not supported under macOS, however, the Chisel tool flow runs fine
 on the Mac. You can simulate your design on the Mac and use a virtual machine
 (e.g., with Ubuntu) to synthesize your design with Vivado.
 
- * Install OpenJDK 8 from [AdoptOpenJDK](https://adoptopenjdk.net/)
+ * Install OpenJDK 8 or later from [AdoptOpenJDK](https://adoptopenjdk.net/)
  * Install sbt with ```brew install sbt```
  * Install [GTKWave](http://gtkwave.sourceforge.net/)
  * Install [IntelliJ](https://www.jetbrains.com/idea/download/)
@@ -128,14 +127,12 @@ on the Mac. You can simulate your design on the Mac and use a virtual machine
  * Start IntelliJ to finish the setup
    * Select the light UI theme (if you prefer)
    * On the featured plugins select Install for Scala
-   * When importing a project, *select the JDK 1.8* you installed before (not Java 11!)
+   * When importing a project, select the JDK you installed before
      * On Project JDK select *New*
      * Select *JDK*
-     * Select the path to your OpenJDK 8 installation
+     * Select the path to your OpenJDK installation
 
 ## Common Error
 
 Her we collect common issues when installing the tools. Also refer to the [FAQ](FAQ.md)
-
- * Wrong Java version. Version later then JDK 8 do not work with Chisel/Scala
 
