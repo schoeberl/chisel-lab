@@ -35,7 +35,7 @@ With IntelliJ import the lab2 project as follows:
  * Click *Import Project*, or on a running IntelliJ: *File - New -
 Project from Existing Source...*
  * Navigate to ```.../chisel-lab/lab2``` and select the file ```build.sbt```, press *Open*
- * Make sure to select JDK 1.8 (not Java 11!)
+ * Make sure to select a JDK 1.8
  * Press OK on the next dialog box
  
 ### A Majority Voter

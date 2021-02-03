@@ -20,12 +20,13 @@ and it is placed in folder ```chisel-lab```.
 With IntelliJ import the lab1 project as follows:
 
  * Start IntelliJ
- * Click *Import Project*
+ * Select *File - New - Project from Existing Sources...*
+ * Select *sbt*
  * Navigate to ```.../chisel-lab/lab1``` and select the file ```build.sbt```, press *Open*
- * Select the JDK 1.8 (not Java 11!)
+ * Select the JDK 1.8 (or later)
    * On Project JDK select *New*
    * Select *JDK*
-   * Select the path to your OpenJDK 8 installation, usually ```C:\Program Files\AdoptOpenJDK\jdk-8.0.232.09-hotspot\'''
+   * Select the path to your OpenJDK 8 installation, something like ```C:\Program Files\AdoptOpenJDK\jdk-8.0.232.09-hotspot\'''
  * Press OK on the next dialog box
 
 This importing from the project may take some time at the first import, as Scala and Chisel files need to be downloaded. Wait until it is finished.
@@ -129,4 +130,23 @@ Try to change the ```CNT_MAX``` constant to a slightly smaller value
 Run the Chisel code in IntelliJ again and synthesize and configure again
 with Vivado. The LED should now blink at a different frequency.
 Faster or slower? At what frequency?
+
+### Simulation Without and FPGA Board
+
+If it happens that you do not have access to an FPGA board, you can run the
+blinking LED in simulation. To avoid to simulate for 100000000 cycles change
+the factor in ```Hello.scala``` on following line from:
+
+```
+  val CNT_MAX = (100000000 / 2 - 1).U;
+```
+to
+```
+  val CNT_MAX = (50000 / 2 - 1).U;
+```
+and run the simulation with
+```
+sbt test
+```
+You should see in the terminal a *simulation* of the blinking LED.
 
