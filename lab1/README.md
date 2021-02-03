@@ -131,11 +131,11 @@ Run the Chisel code in IntelliJ again and synthesize and configure again
 with Vivado. The LED should now blink at a different frequency.
 Faster or slower? At what frequency?
 
-### Simulation Without and FPGA Board
+### Simulation Without an FPGA Board
 
 If it happens that you do not have access to an FPGA board, you can run the
-blinking LED in simulation. To avoid to simulate for 100000000 cycles change
-the factor in ```Hello.scala``` on following line from:
+blinking LED in simulation. To avoid to simulate for 100000000 clock cycles
+change the factor in ```Hello.scala``` on following line from:
 
 ```
   val CNT_MAX = (100000000 / 2 - 1).U;
