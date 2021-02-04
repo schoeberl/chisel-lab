@@ -2,7 +2,7 @@
 
 ## Chisel
 
-### Extract bitfield
+### Extracting a bitfield
 You can extract a subset of wires from a bus x like this:  
     
     x(n, m)
@@ -66,6 +66,14 @@ When accessing the above vector with 'myVec(2)', Chisel attempts to select the s
 ### Enum
 
 A wrong number n in Enum(n) for FSM states can give a long error log.
+
+## IntelliJ
+
+### My file list is gone
+Look on the very left of IntelliJ, and click "Project" to reopen your file view.
+
+### My terminal disappeared
+Select View > Tool Windows > Terminal, or type `Alt + F12` to reopen it. Alternatively, just use the "sbt shell". Commands run through the sbt shell should *not* be prefixed with `sbt` (instead of typing `sbt "run"`, simply write `run` and hit enter.
 
 ## Vivado
 
