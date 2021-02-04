@@ -20,7 +20,7 @@ and it is placed in folder ```chisel-lab```.
 With IntelliJ import the lab1 project as follows:
 
  * Start IntelliJ
- * Select *File - New - Project from Existing Sources...*
+ * When you start IntelliJ the first time, click *Import Project*, otherwise select *File - New - Project from Existing Sources...*
  * Select *sbt*
  * Navigate to ```.../chisel-lab/lab1``` and select the file ```build.sbt```, press *Open*
  * Select the JDK 1.8 (or later)
