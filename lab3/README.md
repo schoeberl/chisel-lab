@@ -1,4 +1,4 @@
-# Lab 4: Components and Small Sequential Circuits
+# Lab 3: Components and Small Sequential Circuits
 
 The lab session will show you how to use components, called modules in Chisel,
 and how to describe small sequential circuits.
