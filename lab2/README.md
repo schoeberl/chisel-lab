@@ -35,7 +35,7 @@ With IntelliJ import the lab2 project as follows:
  * Click *Import Project*, or on a running IntelliJ: *File - New -
 Project from Existing Source...*
  * Navigate to ```.../chisel-lab/lab2``` and select the file ```build.sbt```, press *Open*
- * Make sure to select a JDK 1.8
+ * Make sure to select a JDK 1.8 or later
  * Press OK on the next dialog box
  
 ### A Majority Voter
@@ -60,8 +60,8 @@ to compile and test your project.
 
 In the *Run* window you should see several tests failing, similar to:
 ```
-[info] *** 1 TEST FAILED ***
-[error] Failed: Total 3, Failed 1, Errors 0, Passed 2
+[info] *** 4 TESTS FAILED ***
+[error] Failed: Total 6, Failed 4, Errors 0, Passed 2
 ```
 
 For the majority circuit we provide three *tests*:
@@ -112,18 +112,18 @@ to make sure you have completed this exercise.
 ### Optional: Generating Hardware
 
 In lab1 you have learned how to generate hardware to run in an FPGA.
-In the current lab exercise you used testing to run your combinational circuit.
-However, we can also run those circuits on the FPGA boards and use switches
+In the current lab exercise you use testing to run your combinational circuit.
+However, we can also run those circuits on the FPGA board and use switches
 and LEDs to test the circuits.
 
 Generate the Verilog description by running the Majority App with:
 ```
 sbt run
 ```
-As there are more than one App in this lab, you need to select which one
+If there are more than one App in a project, you need to select which one
 to run, the ```Majority```. Like the test cases, you can also directly
 select which App to run by:
-```sbtshell
+```
 sbt "runMain Majority"
 ```
 
