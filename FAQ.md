@@ -81,4 +81,7 @@ Select View > Tool Windows > Terminal, or type `Alt + F12` to reopen it. Alterna
 
 Comes from a missing pin assignment in the .xdc file. Look for the blue text in the warning/error messages, this will tell you what pins are unconstrained.
 
+### Unable to connect to Basys3 board
+Follow the instructions at [this link](https://www.xilinx.com/support/answers/59128.html). Make sure that you open your shell/command prompt as admin, and then navigate to the correct folder. I did not need to supply any command line arguments for this to work.
+
 
