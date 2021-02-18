@@ -2,7 +2,7 @@
 
 ## Chisel
 
-We do a dummy change here.
+Here some common issues with Chisel constructs.
 
 ### Extracting a bitfield
 You can extract a subset of wires from a bus x like this:  
