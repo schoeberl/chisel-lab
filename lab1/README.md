@@ -86,7 +86,7 @@ to synthesize our design and configure the Basys3 board.
 The process is described in detail in the document
 *A digital circuit design flow guide  using VHDL and Xilinx Vivado
 targeting a Digilent BASYS 3 FPGA board* from last semester.
-Please use that document (available in DTU Inside).
+Please use that document (from the first semester).
 The following list is only a brief summary.
 
 ### Vivado Project Creation

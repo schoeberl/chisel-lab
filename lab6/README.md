@@ -2,7 +2,7 @@
 
 This lab is your next step towards your vending machine.
 It is described in  more detail in the **Vending Machine Specification**
-(available in DTU Inside), Exercise 1b.
+(available in DTU Learn), Exercise 1b.
 
 The circuit consist of the seven-segment decoder and the test circuit.
 The test circuit shall drive the seven-segment display with a counter

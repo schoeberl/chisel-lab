@@ -2,7 +2,7 @@
 
 This folder contains the setup of the full Vending Machine project.
 The detailed specification is available at:
-[Vending Machine Specification](https://cn.inside.dtu.dk/cnnet/filesharing/download/e712d72e-278e-4fef-a6ed-03eb20134acc)
+[Vending Machine Specification](https://learn.inside.dtu.dk/d2l/common/viewFile.d2lfile/Content/L2NvbnRlbnQvZW5mb3JjZWQvNjAyMzgtT0ZGRVJJTkctNjMzODE1L1ZlbmRpbmdNYWNoaW5lLnBkZg/VendingMachine.pdf?ou=60238)
 
 
 ## Testing the Design

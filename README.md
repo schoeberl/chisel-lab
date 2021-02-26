@@ -31,7 +31,7 @@ The following list gives an overview of all lab sessions and assignments.
 For lab sessions where no link is given, we will provide the material in
 [DTU Inside](https://www.inside.dtu.dk).
 For the Vending Machine related labs (week 5, 6, 8, 9, 10, and 12) please
-read the [Vending Machine Specification](https://cn.inside.dtu.dk/cnnet/filesharing/download/e712d72e-278e-4fef-a6ed-03eb20134acc).
+read the [Vending Machine Specification](https://learn.inside.dtu.dk/d2l/common/viewFile.d2lfile/Content/L2NvbnRlbnQvZW5mb3JjZWQvNjAyMzgtT0ZGRVJJTkctNjMzODE1L1ZlbmRpbmdNYWNoaW5lLnBkZg/VendingMachine.pdf?ou=60238).
 
  * [Lab 1: Hello World in Chisel](lab1)
  * [Lab 2: Combinational Circuits in Chisel](lab2)
