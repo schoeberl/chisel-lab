@@ -96,7 +96,10 @@ Instead of running the apt commands manually you can also run the provided ```se
      * On Project JDK select *New*
      * Select *JDK*
      * Select the path to your OpenJDK 8 installation, usually something like ```C:\Program Files\AdoptOpenJDK\jdk-8.0.232.09-hotspot\```
- * Install [GTKWave](http://gtkwave.sourceforge.net/)
+ * Download the [GTKWave binaries](https://sourceforge.net/projects/gtkwave/files/)
+   * Select the latest release that matches the pattern ```gtkwave-{release number}-bin-win32```
+   * Extract the downloaded ```.zip``` into a directory of choice
+   * Run the executable ```gtkwave.exe``` in the folder ```gtkwave\bin\```
    * Put a link to the executable on the desktop
  * Copy the PDF of the [Chisel Book](http://www.imm.dtu.dk/~masca/chisel-book.html) on the desktop
  * Install a [git client](https://git-scm.com/download/win)
@@ -134,5 +137,5 @@ on the Mac. You can simulate your design on the Mac and use a virtual machine
 
 ## Common Error
 
-Her we collect common issues when installing the tools. Also refer to the [FAQ](FAQ.md)
+Here we collect common issues when installing the tools. Also refer to the [FAQ](FAQ.md)
 
