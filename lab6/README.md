@@ -13,7 +13,7 @@ For a start you can connect the clock input to a button for manual
 clocking. However, the final solution shall use the 100 MHz clock and additional
 hardware is needed to produce the 2 Hz timing.
 
-Reuse your table from last week (lab5) and add it to ```SevenSegDec.scala```.
+Reuse your table from last lab and add it to ```SevenSegDec.scala```.
 
 The test circuit shall be implemented in ```CountSevenSeg.scala```. You need
 to instantiate the ```SevenSegDec``` module, add your test circuit,
