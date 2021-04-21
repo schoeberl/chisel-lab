@@ -43,6 +43,7 @@ read the [Vending Machine Specification](https://learn.inside.dtu.dk/d2l/common/
  * [Lab 8: Multiplexed Seven-Segment Display](lab8)
  * [Lab 9: Multiplexed Seven-Segment Display (Continuation)](lab8)
  * [Lab 10, 12: The Vending Machine](vending)
+ * [Lab 11: A Simple Tester](lab11)
 
 ## Resources
 
