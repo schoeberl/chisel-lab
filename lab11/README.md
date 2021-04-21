@@ -1,4 +1,4 @@
-# Lab 1: A Simple Tester
+# Lab 11: A Simple Tester
 
 In this lab you shall write test code for a 5:1 multiplexer. The interface
 of the multiplexer is:
@@ -20,15 +20,14 @@ class Mux5 extends Module {
 
 Write the test code for the ```Mux5``` implementation. Try to **not**
 look into the implementation. The implementation has errors.
-Your job is to show those errors with your test, not correcting
-the errors in ```Mux5```.
+Your job is to show those errors with your test code. You do not
+need to correct the errors in ```Mux5```.
 
 There is no *starting* code given. You need to start from scratch
-(look into an oder lab for test examples). You have two options:
+(look into an older lab for test examples). You have two options:
 
  * Call the tester from an ```App``` (= main), place your code
 in ```src/main/scala```, and run your test with ```sbt run```, or
-   
  * Call the tester from a ScalaTest, place your code
    in ```src/test/scala```, and run your test with ```sbt test```.
 
@@ -39,7 +38,7 @@ in ```src/main/scala```, and run your test with ```sbt run```, or
 
 ## Use IntelliJ
 
-With IntelliJ import the lab2 project as follows:
+With IntelliJ import the lab project as follows:
 
  * Start IntelliJ
  * Click *Import Project*, or on a running IntelliJ: *File - New -
