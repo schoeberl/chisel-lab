@@ -6,8 +6,7 @@ Although this lab is customized for the DTU course, it can also serve as
 introduction lab for digital design with [Chisel](https://chisel.eecs.berkeley.edu/).
 
 The lab is based on:
-[Digital Design with Chisel](http://www.imm.dtu.dk/~masca/chisel-book.html),
-first edition, by Martin Schoeberl.
+[Digital Design with Chisel](http://www.imm.dtu.dk/~masca/chisel-book.html), by Martin Schoeberl.
 
 [![Book Cover](figures/cover-small.jpg)](http://www.imm.dtu.dk/~masca/chisel-book.html)
 
@@ -47,10 +46,10 @@ read the [Vending Machine Specification](https://learn.inside.dtu.dk/d2l/common/
 
 ## Resources
 
+ * [Setup.md](Setup.md) installation instructions
  * [Basys3_Master.xdc](Basys3_Master.xdc) constraint file for pin definition and clock
  * [IntelliJ for Scala](https://docs.scala-lang.org/getting-started-intellij-track/getting-started-with-scala-in-intellij.html)
  * [Vivado WebPACK](https://www.xilinx.com/products/design-tools/vivado/vivado-webpack.html)
- * [Setup.md](Setup.md) installation instructions
  * [The Chisel Jupyter Notebooks](https://mybinder.org/v2/gh/freechipsproject/chisel-bootcamp/master) An online introduction to the Scala language and Chisel.
  * [The Chisel Cookbook](https://github.com/freechipsproject/chisel3/wiki/Cookbook) Large FAQ and introduction to Chisel
  * [Basys 3](https://reference.digilentinc.com/reference/programmable-logic/basys-3/start?redirect=1)
