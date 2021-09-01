@@ -12,7 +12,7 @@ in hardware design. This time the tests are given to you, in a later lab session
 you will write your own tests.
 
 After the lab you will know how to use the few constructs to describe
-common combinational building blocks, such as mulitplexer, encoder,
+common combinational building blocks, such as multiplexer, encoder,
 decoder, and function tables in Chisel.
 
 We assume that you have downloaded the complete lab material from GitHub
@@ -143,10 +143,10 @@ and automate.
 
 ![Mux](../figures/mux.svg)
 
-A multplexer selects between different input signals. In the above figure
+A multiplexer selects between different input signals. In the above figure
 it is a 2:1 multiplexer. With ```sel``` we route either input ```a``` or
 input ```b``` to output ```y```. We assume in this example that ```a```
-is slected when ```sel``` is ```0``` or ```false```, otherwise  ```b```.
+is selected when ```sel``` is ```0``` or ```false```, otherwise  ```b```.
 
 Open the ```Mux2``` component to implement the multiplexer.
 You can test your implementation with:
