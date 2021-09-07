@@ -69,7 +69,7 @@ your Linux system for the DE 2 lab.
    * Get digilent board definitions
  * Install Java JDK and other tools with:
  * ```sudo apt install openjdk-8-jdk git make gtkwave```
- * Install sbt according to the instructions at [sbt download](https://www.scala-sbt.org/download.html)
+ * Install sbt according to the instructions from [sbt download](https://www.scala-sbt.org/download.html)
  * Install IntelliJ and the Scala plugin with a launch shortcut in favorites
  * Shortcut to GtkWave on desktop
 
