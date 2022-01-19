@@ -94,27 +94,24 @@ class DisplaySimulation extends MainFrame {
   }
 }
 
-class DisplayRunner extends AnyFlatSpec with ChiselScalatestTester {
-
-  "DisplayRunner" should "run" in {
-    val display = new DisplaySimulation
-    display.visible = true
-    test(new Display((20))) { dut =>
-      dut.clock.setTimeout(0)
-      while (display.running) {
-        dut.io.sw.poke(display.inVal.U)
-        dut.clock.step(4)
-        var an = dut.io.an.peek.litValue.toInt
-        val seg = dut.io.seg.peek.litValue.toInt
-        for (i <- 0 until 4) {
-          if ((an & 1) == 0) {
-            display.digits(3 - i) = ~seg
-          }
-          an >>= 1
+object DisplaySimulation extends App {
+  val display = new DisplaySimulation
+  display.visible = true
+  RawTester.test(new Display((20))) { dut =>
+    dut.clock.setTimeout(0)
+    while (display.running) {
+      dut.io.sw.poke(display.inVal.U)
+      dut.clock.step(4)
+      var an = dut.io.an.peek.litValue.toInt
+      val seg = dut.io.seg.peek.litValue.toInt
+      for (i <- 0 until 4) {
+        if ((an & 1) == 0) {
+          display.digits(3 - i) = ~seg
         }
-        display.repaint()
-        Thread.sleep(10)
+        an >>= 1
       }
+      display.repaint()
+      Thread.sleep(10)
     }
   }
 }

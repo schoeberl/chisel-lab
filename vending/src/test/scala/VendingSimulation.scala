@@ -131,42 +131,37 @@ class VendingSimulation extends MainFrame {
   }
 }
 
-class VendingRunner extends AnyFlatSpec with ChiselScalatestTester {
+object VendingSimulation extends App {
+  val d = new VendingSimulation
+  d.visible = true
+  RawTester.test(new VendingMachine(20)) { dut =>
+    dut.clock.setTimeout(0)
+    while (d.running) {
 
-  "VendingRunner" should "run" in {
-    val d = new VendingSimulation
-    d.visible = true
-    test(new VendingMachine(20)) { dut =>
-      dut.clock.setTimeout(0)
-      while (d.running) {
-
-        dut.clock.step(4)
-        var an = dut.io.an.peek.litValue.toInt
-        val seg = dut.io.seg.peek.litValue.toInt
-        for (i <- 0 until 4) {
-          if ((an & 1) == 0) {
-            d.digits(3 - i) = ~seg
-          }
-          an >>= 1
+      dut.clock.step(4)
+      var an = dut.io.an.peek.litValue.toInt
+      val seg = dut.io.seg.peek.litValue.toInt
+      for (i <- 0 until 4) {
+        if ((an & 1) == 0) {
+          d.digits(3 - i) = ~seg
         }
-
-        d.ledVal(15) = dut.io.releaseCan.peek.litValue == 1
-        d.ledVal(0) = dut.io.alarm.peek.litValue == 1
-        var price = 0
-        for (i <- 0 until 5) {
-          price <<= 1
-          price += (if (d.switches(4-i).selected) 1 else 0)
-        }
-        dut.io.price.poke(price.U)
-        dut.io.coin2.poke(d.btnVal(0).B)
-        dut.io.coin5.poke(d.btnVal(1).B)
-        dut.io.buy.poke(d.btnVal(2).B)
-
-        d.repaint()
-        Thread.sleep(10)
+        an >>= 1
       }
+
+      d.ledVal(15) = dut.io.releaseCan.peek.litValue == 1
+      d.ledVal(0) = dut.io.alarm.peek.litValue == 1
+      var price = 0
+      for (i <- 0 until 5) {
+        price <<= 1
+        price += (if (d.switches(4-i).selected) 1 else 0)
+      }
+      dut.io.price.poke(price.U)
+      dut.io.coin2.poke(d.btnVal(0).B)
+      dut.io.coin5.poke(d.btnVal(1).B)
+      dut.io.buy.poke(d.btnVal(2).B)
+
+      d.repaint()
+      Thread.sleep(10)
     }
   }
-
-
 }
