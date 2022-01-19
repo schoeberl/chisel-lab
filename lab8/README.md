@@ -12,13 +12,14 @@ to switch the display and drive the multiplexer.
 Reuse ```SevenSegDec.scala``` from Lab 6. Run:
 
 ```
-sbt test
+sbt "testOnly DisplaySpec"
 ```
 
 and explore the waveform with GTKWave. The test runs just for
 200 clock cycles. To see any useful results you need to switch
 your multiplexer with a high frequency (your counter counts only
-up to a few clock cycles).
+up to a few clock cycles). The waveform can be found in folder
+```test_run_dir```
 
 When you are happy with the test results, change your maximum count
 value to generate a tick at around 1 kHz, and generate Verilog with:
@@ -48,6 +49,6 @@ see results in the simulation.
 You run the simulation of the display with:
 
 ```
-sbt "test:runMain DisplaySimulation"
+sbt "testOnly DisplayRunner"
 ```
 

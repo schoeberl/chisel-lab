@@ -1,32 +1,27 @@
-import chisel3.iotesters.PeekPokeTester
-import org.scalatest._
+import chisel3._
+import chiseltest._
+import org.scalatest.flatspec.AnyFlatSpec
 
-class AccuTest(dut: Accu) extends PeekPokeTester(dut) {
-
-  poke(dut.io.din, 0)
-  poke(dut.io.setZero, 0)
-  // reset value
-  expect(dut.io.dout, 0)
-  step(1)
-  expect(dut.io.dout, 0)
-  poke(dut.io.din, 7)
-  step(1)
-  expect(dut.io.dout, 7)
-  step(1)
-  expect(dut.io.dout, 14)
-  poke(dut.io.setZero, 1)
-  step(1)
-  expect(dut.io.dout, 0)
-  poke(dut.io.setZero, 0)
-  poke(dut.io.din, 3)
-  step(1)
-  expect(dut.io.dout, 3)
-
-
-}
-
-class AccuSpec extends FlatSpec with Matchers {
+class AccuSpec extends AnyFlatSpec with ChiselScalatestTester {
   "Accu " should "pass" in {
-    chisel3.iotesters.Driver(() => new Accu) { c => new AccuTest(c)} should be (true)
+    test(new Accu) {dut =>
+      dut.io.din.poke(0.U)
+      dut.io.setZero.poke(false.B)
+      // reset value
+      dut.io.dout.expect(0.U)
+      dut.clock.step(1)
+      dut.io.dout.expect(0.U)
+      dut.io.din.poke(7.U)
+      dut.clock.step(1)
+      dut.io.dout.expect(7.U)
+      dut.clock.step(1)
+      dut.io.dout.expect(14.U)
+      dut.io.setZero.poke(true.B)
+      dut.clock.step(1)
+      dut.io.dout.expect(0.U)
+      dut.io.setZero.poke(false.B)
+      dut.io.din.poke(3.U)
+      dut.io.dout.expect(3.U)
+    }
   }
 }

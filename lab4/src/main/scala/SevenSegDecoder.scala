@@ -20,8 +20,7 @@ class SevenSegDecoder extends Module {
 
 // generate Verilog
 object SevenSegDecoder extends App {
-  (new chisel3.stage.ChiselStage).emitVerilog(new SevenSegDecoder())
-
+  emitVerilog(new SevenSegDecoder())
 }
 
 

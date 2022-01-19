@@ -4,11 +4,13 @@ import scala.swing.event._
 
 import java.awt.{Color, Graphics2D}
 
-import chisel3.iotesters.PeekPokeTester
+import chisel3._
+import chiseltest._
+import org.scalatest.flatspec.AnyFlatSpec
 
 
 /**
-  * Work-in-progress: shall become a simulation of the Basys3 display
+  * A simulation of the Basys3 display
   */
 class DisplaySimulation extends MainFrame {
 
@@ -92,33 +94,27 @@ class DisplaySimulation extends MainFrame {
   }
 }
 
+class DisplayRunner extends AnyFlatSpec with ChiselScalatestTester {
 
-class DisplayDriver(dut: Display, d: DisplaySimulation) extends PeekPokeTester(dut) {
-
-  while (d.running) {
-    poke(dut.io.sw, d.inVal)
-    step(4)
-    var an = peek(dut.io.an).toInt
-    val seg = peek(dut.io.seg).toInt
-    for (i <- 0 until 4) {
-      if ((an & 1) == 0) {
-        d.digits(3 - i) = ~seg
+  "DisplayRunner" should "run" in {
+    val display = new DisplaySimulation
+    display.visible = true
+    test(new Display((20))) { dut =>
+      dut.clock.setTimeout(0)
+      while (display.running) {
+        dut.io.sw.poke(display.inVal.U)
+        dut.clock.step(4)
+        var an = dut.io.an.peek.litValue.toInt
+        val seg = dut.io.seg.peek.litValue.toInt
+        for (i <- 0 until 4) {
+          if ((an & 1) == 0) {
+            display.digits(3 - i) = ~seg
+          }
+          an >>= 1
+        }
+        display.repaint()
+        Thread.sleep(10)
       }
-      an >>= 1
     }
-    d.repaint()
-    Thread.sleep(10)
   }
-
-}
-
-
-object DisplaySimulation extends App {
-
-  val display = new DisplaySimulation
-  display.visible = true
-
-  chisel3.iotesters.Driver(() => new Display(20))
-  { c => new DisplayDriver(c, display) }
-
 }

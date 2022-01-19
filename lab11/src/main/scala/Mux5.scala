@@ -27,7 +27,5 @@ class Mux5 extends Module {
 }
 
 object MuxHW extends App {
-
-  chisel3.Driver.execute(Array("--target-dir", "generated"),
-    () => new Mux5())
+  emitVerilog(new Mux5(), Array("--target-dir", "generated"))
 }

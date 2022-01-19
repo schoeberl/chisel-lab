@@ -1,18 +1,16 @@
-import chisel3.iotesters.PeekPokeTester
-import org.scalatest._
+import chisel3._
+import chiseltest._
+import org.scalatest.flatspec.AnyFlatSpec
 
-class UseMux2Test(dut: UseMux2) extends PeekPokeTester(dut) {
-
-  poke(dut.io.sel, 0)
-  step(1)
-  expect(dut.io.dout, 1)
-  poke(dut.io.sel, 1)
-  step(1)
-  expect(dut.io.dout, 0)
-}
-
-class UseMux2Spec extends FlatSpec with Matchers {
+class UseMux2Spec extends AnyFlatSpec with ChiselScalatestTester {
   "UseMux2 " should "pass" in {
-    chisel3.iotesters.Driver(() => new UseMux2) { c => new UseMux2Test(c)} should be (true)
+    test(new UseMux2) { dut =>
+      dut.io.sel.poke(0.U)
+      dut.clock.step(1)
+      dut.io.dout.expect(1.U)
+      dut.io.sel.poke(1.U)
+      dut.clock.step(1)
+      dut.io.dout.expect(0.U)
+    }
   }
 }

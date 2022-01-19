@@ -1,26 +1,25 @@
-import chisel3.iotesters.PeekPokeTester
-import org.scalatest._
+import chisel3._
+import chiseltest._
+import org.scalatest.flatspec.AnyFlatSpec
 
-class DelayTest(dut: Delay) extends PeekPokeTester(dut) {
-
-  poke(dut.io.din, 0)
-  step(5)
-  expect(dut.io.dout, 0)
-  poke(dut.io.din, 123)
-  step(1)
-  expect(dut.io.dout, 0)
-  step(1)
-  expect(dut.io.dout, 123)
-  poke(dut.io.din, 0)
-  step(1)
-  expect(dut.io.dout, 123)
-  step(1)
-  expect(dut.io.dout, 0)
-
-}
-
-class DelaySpec extends FlatSpec with Matchers {
+class DelaySpec extends AnyFlatSpec with ChiselScalatestTester {
   "Delay " should "pass" in {
-    chisel3.iotesters.Driver(() => new Delay) { c => new DelayTest(c)} should be (true)
+    test(new Delay) { dut =>
+      dut.io.din.poke(0.U)
+      dut.clock.step(5)
+      dut.io.dout.expect(0.U)
+
+      dut.io.din.poke(123.U)
+      dut.clock.step(1)
+      dut.io.dout.expect(0.U)
+      dut.clock.step(1)
+      dut.io.dout.expect(123.U)
+
+      dut.io.din.poke(0.U)
+      dut.clock.step(1)
+      dut.io.dout.expect(123.U)
+      dut.clock.step(1)
+      dut.io.dout.expect(0.U)
+    }
   }
 }

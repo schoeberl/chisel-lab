@@ -20,5 +20,5 @@ class CountSevenSeg extends Module {
 
 // generate Verilog
 object CountSevenSeg extends App {
-  (new chisel3.stage.ChiselStage).emitVerilog(new CountSevenSeg())
+  emitVerilog(new CountSevenSeg())
 }

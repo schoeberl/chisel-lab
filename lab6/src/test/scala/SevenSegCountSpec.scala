@@ -1,13 +1,10 @@
-import chisel3.iotesters.PeekPokeTester
-import org.scalatest._
+import chiseltest._
+import org.scalatest.flatspec.AnyFlatSpec
 
-class SevenSegTest(dut: CountSevenSeg) extends PeekPokeTester(dut) {
-  step(100)
-}
-
-class SevenSegCountSpec extends FlatSpec with Matchers {
+class SevenSegCountSpec extends AnyFlatSpec with ChiselScalatestTester {
 	"SevenSegTest " should "pass" in {
-		chisel3.iotesters.Driver.execute(Array("--generate-vcd-output", "on"), () => new CountSevenSeg)
-		{ c => new SevenSegTest(c)} should be (true)
+		test(new CountSevenSeg).withAnnotations(Seq(WriteVcdAnnotation)) { dut =>
+			dut.clock.step(100)
+		}
 	}
 }

@@ -1,27 +1,24 @@
-import chisel3.iotesters.PeekPokeTester
-import org.scalatest._
+import chiseltest._
+import org.scalatest.flatspec.AnyFlatSpec
 
-class HelloSpec extends FlatSpec with Matchers {
+class HelloSpec extends AnyFlatSpec with ChiselScalatestTester {
 
   "Hello" should "pass" in {
-    chisel3.iotesters.Driver(() => new Hello()) { c =>
-      new PeekPokeTester(c) {
-
-        var ledStatus = -1
-        println("Start the blinking LED")
-        for (i <- 0 until 100) {
-          step(10000)
-          val ledNow = peek(c.io.led).toInt
-          val s = if (ledNow == 0) "o" else "*"
-          if (ledStatus != ledNow) {
-            System.out.println(s)
-            ledStatus = ledNow
-          }
+    test(new Hello()) { dut =>
+      var ledStatus = -1
+      println("Start the blinking LED")
+      dut.clock.setTimeout(0)
+      for (i <- 0 until 100) {
+        dut.clock.step(10000)
+        val ledNow = dut.io.led.peek.litValue.toInt
+        val s = if (ledNow == 0) "o" else "*"
+        if (ledStatus != ledNow) {
+          System.out.println(s)
+          ledStatus = ledNow
         }
-        println("\nEnd the blinking LED")
       }
-    } should be (true)
+      println("End the blinking LED")
+    }
   }
-
 }
 

@@ -1,15 +1,12 @@
-import chisel3.iotesters.PeekPokeTester
-import org.scalatest._
+import chisel3._
+import chiseltest._
+import org.scalatest.flatspec.AnyFlatSpec
 
-class DisplayTest(dut: Display) extends PeekPokeTester(dut) {
-
-  poke(dut.io.sw, 0x1234)
-  step(200)
-}
-
-class DisplaySpec extends FlatSpec with Matchers {
+class DisplaySpec extends AnyFlatSpec with ChiselScalatestTester {
   "DisplayTest " should "pass" in {
-    chisel3.iotesters.Driver.execute(Array("--generate-vcd-output", "on"), () => new Display(20))
-    { c => new DisplayTest(c)} should be (true)
+    test(new Display(20)).withAnnotations(Seq(WriteVcdAnnotation)) { dut =>
+      dut.io.sw.poke(0x1234.U)
+      dut.clock.step(200)
+    }
   }
 }

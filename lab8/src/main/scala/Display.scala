@@ -25,5 +25,5 @@ class Display(maxCount: Int) extends Module {
 
 // generate Verilog
 object Display extends App {
-  (new chisel3.stage.ChiselStage).emitVerilog(new Display(100000))
+  emitVerilog(new Display(100000))
 }

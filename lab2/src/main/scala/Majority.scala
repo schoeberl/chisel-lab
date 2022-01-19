@@ -31,5 +31,5 @@ class Majority extends Module {
 
 // generate Verilog
 object Majority extends App {
-  (new chisel3.stage.ChiselStage).emitVerilog(new Majority())
+  emitVerilog(new Majority())
 }

@@ -1,23 +1,21 @@
-import chisel3.iotesters.PeekPokeTester
-import org.scalatest._
+import chisel3._
+import chiseltest._
+import org.scalatest.flatspec.AnyFlatSpec
 
-class AddSubTester(dut: AddSub) extends PeekPokeTester(dut) {
-
-  poke(dut.io.a, 1)
-  poke(dut.io.b, 2)
-  poke(dut.io.selAdd, 1)
-  step(1)
-  expect(dut.io.y, 3)
-
-  poke(dut.io.a, 3)
-  poke(dut.io.b, 2)
-  poke(dut.io.selAdd, 0)
-  step(1)
-  expect(dut.io.y, 1)
-}
-
-class AddSubSpec extends FlatSpec with Matchers {
+class AddSubSpec extends AnyFlatSpec with ChiselScalatestTester {
   "AddSub" should "pass" in {
-    chisel3.iotesters.Driver(() => new AddSub) { c => new AddSubTester(c)} should be (true)
+
+    test(new AddSub) { dut =>
+      dut.io.a.poke(1.U)
+      dut.io.b.poke(2.U)
+      dut.io.selAdd.poke(true.B)
+      dut.clock.step()
+      dut.io.y.expect(3.U)
+      dut.io.a.poke(3.U)
+      dut.io.b.poke(2.U)
+      dut.io.selAdd.poke(false.B)
+      dut.clock.step()
+      dut.io.y.expect(1.U)
+    }
   }
 }

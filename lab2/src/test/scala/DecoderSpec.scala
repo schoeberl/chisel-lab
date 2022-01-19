@@ -1,19 +1,17 @@
-import chisel3.iotesters.PeekPokeTester
-import org.scalatest._
+import chisel3._
+import chiseltest._
+import org.scalatest.flatspec.AnyFlatSpec
 
-class DecoderTester(dut: Decoder) extends PeekPokeTester(dut) {
-
-  for (n <- 0 to 3) {
-    poke(dut.io.sel, n)
-    step(1)
-    val res = 1 << n
-    println(n + " " + res)
-    expect(dut.io.out, res)
-  }
-}
-
-class DecoderSpec extends FlatSpec with Matchers {
+class DecoderSpec extends AnyFlatSpec with ChiselScalatestTester {
   "Decoder" should "pass" in {
-    chisel3.iotesters.Driver(() => new Decoder) { c => new DecoderTester(c)} should be (true)
+    test(new Decoder) { dut =>
+      for (n <- 0 to 3) {
+        dut.io.sel.poke(n.U)
+        dut.clock.step(1)
+        val res = 1 << n
+        println(n + " " + res)
+        dut.io.out.expect(res.U)
+      }
+    }
   }
 }

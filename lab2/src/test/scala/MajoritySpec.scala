@@ -3,71 +3,63 @@
  * Test a 3-bit majority circuit.
  */
 
-import chisel3.iotesters.PeekPokeTester
-import org.scalatest._
+import chisel3._
+import chiseltest._
+import org.scalatest.flatspec.AnyFlatSpec
 
-class MajorityTesterSimple(dut: Majority) extends PeekPokeTester(dut) {
-
-  // Simple tests
-  poke(dut.io.a, 0)
-  poke(dut.io.b, 0)
-  poke(dut.io.c, 0)
-  step(1)
-  expect(dut.io.out, 0)
-  poke(dut.io.a, 1)
-  poke(dut.io.b, 1)
-  poke(dut.io.c, 1)
-  step(1)
-  expect(dut.io.out, 1)
-}
-
-class MajoritySimple extends FlatSpec with Matchers {
+class MajoritySimple extends AnyFlatSpec with ChiselScalatestTester {
   "Majority simple test" should "pass" in {
-    chisel3.iotesters.Driver(() => new Majority) { c => new MajorityTesterSimple(c)} should be (true)
+    test(new Majority) { dut =>
+      // Simple tests
+      dut.io.a.poke(false.B)
+      dut.io.b.poke(false.B)
+      dut.io.c.poke(false.B)
+      dut.clock.step(1)
+      dut.io.out.expect(false.B)
+      dut.io.a.poke(true.B)
+      dut.io.b.poke(true.B)
+      dut.io.c.poke(true.B)
+      dut.clock.step(1)
+      dut.io.out.expect(true.B)
+    }
   }
 }
 
-class MajorityTesterPrint(dut: Majority) extends PeekPokeTester(dut) {
-
-  println("Logic table for Majority")
-  println("a b c -> out")
-  for (i <- 0 to 7) {
-    val a = i & 1
-    val b = (i & 2) >> 1
-    val c = (i & 4) >> 2
-    poke(dut.io.a, a)
-    poke(dut.io.b, b)
-    poke(dut.io.c, c)
-    step(1)
-    val out = peek(dut.io.out)
-    println(s"$a $b $c -> $out")
-  }
-}
-
-class MajorityPrinter extends FlatSpec with Matchers {
+class MajorityPrinter extends AnyFlatSpec with ChiselScalatestTester {
   "Majority print results" should "pass" in {
-    chisel3.iotesters.Driver(() => new Majority) { c => new MajorityTesterPrint(c)} should be (true)
+    test(new Majority) { dut =>
+      println("Logic table for Majority")
+      println("  a     b     c   -> out")
+      for (i <- 0 to 7) {
+        val a = (i & 1) == 1
+        val b = ((i & 2) >> 1) == 1
+        val c = ((i & 4) >> 2) == 1
+        dut.io.a.poke(a.B)
+        dut.io.b.poke(b.B)
+        dut.io.c.poke(c.B)
+        dut.clock.step(1)
+        val out = dut.io.out.peek.litToBoolean
+        println(s"$a $b $c -> $out")
+      }
+    }
   }
 }
 
-class MajorityTester(dut: Majority) extends PeekPokeTester(dut) {
-
-  // Exhaustive testing
-  for (i <- 0 to 7) {
-    val a = i & 1
-    val b = (i & 2) >> 1
-    val c = (i & 4) >> 2
-    val res = if (a+b+c > 1) 1 else 0
-    poke(dut.io.a, a)
-    poke(dut.io.b, b)
-    poke(dut.io.c, c)
-    step(1)
-    expect(dut.io.out, res)
-  }
-}
-
-class MajorityFull extends FlatSpec with Matchers {
+class MajorityFull extends AnyFlatSpec with ChiselScalatestTester {
   "Majority exhaustive test" should "pass" in {
-    chisel3.iotesters.Driver(() => new Majority) { c => new MajorityTester(c)} should be (true)
+    test(new Majority) { dut =>
+      // Exhaustive testing
+      for (i <- 0 to 7) {
+        val a = i & 1
+        val b = (i & 2) >> 1
+        val c = (i & 4) >> 2
+        val res = a+b+c > 1
+        dut.io.a.poke((a == 1).B)
+        dut.io.b.poke((b == 1).B)
+        dut.io.c.poke((c == 1).B)
+        dut.clock.step(1)
+        dut.io.out.expect(res.B)
+      }
+    }
   }
 }

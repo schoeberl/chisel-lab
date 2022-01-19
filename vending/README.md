@@ -14,7 +14,7 @@ you can view with GTKWave (remember to open a ```.vcd``` file with ```File - Ope
 You can run the test with:
 
 ```
-sbt test
+sbt "testOnly VendingTester"
 ```
 
 Extend the test with your own tests.
@@ -40,7 +40,7 @@ Furthermore, we can also run the vending machine hardware with a simulation
 of the Basys3 board, as follows:
 
 ```
-sbt test:run
+sbt "testOnly VendingRunner"
 ```
 
 The simulation contains the 7-segment  display simulation that is included

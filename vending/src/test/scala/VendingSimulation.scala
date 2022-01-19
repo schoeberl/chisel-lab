@@ -1,9 +1,9 @@
 import scala.swing._
 import scala.swing.event._
-
 import java.awt.{Color, Graphics2D}
-
-import chisel3.iotesters.PeekPokeTester
+import chisel3._
+import chiseltest._
+import org.scalatest.flatspec.AnyFlatSpec
 
 
 /**
@@ -131,45 +131,42 @@ class VendingSimulation extends MainFrame {
   }
 }
 
+class VendingRunner extends AnyFlatSpec with ChiselScalatestTester {
 
-class VendingDriver(dut: VendingMachine, d: VendingSimulation) extends PeekPokeTester(dut) {
+  "VendingRunner" should "run" in {
+    val d = new VendingSimulation
+    d.visible = true
+    test(new VendingMachine(20)) { dut =>
+      dut.clock.setTimeout(0)
+      while (d.running) {
 
-  while (d.running) {
-    step(4)
-    var an = peek(dut.io.an).toInt
-    val seg = peek(dut.io.seg).toInt
-    for (i <- 0 until 4) {
-      if ((an & 1) == 0) {
-        d.digits(3 - i) = ~seg
+        dut.clock.step(4)
+        var an = dut.io.an.peek.litValue.toInt
+        val seg = dut.io.seg.peek.litValue.toInt
+        for (i <- 0 until 4) {
+          if ((an & 1) == 0) {
+            d.digits(3 - i) = ~seg
+          }
+          an >>= 1
+        }
+
+        d.ledVal(15) = dut.io.releaseCan.peek.litValue == 1
+        d.ledVal(0) = dut.io.alarm.peek.litValue == 1
+        var price = 0
+        for (i <- 0 until 5) {
+          price <<= 1
+          price += (if (d.switches(4-i).selected) 1 else 0)
+        }
+        dut.io.price.poke(price.U)
+        dut.io.coin2.poke(d.btnVal(0).B)
+        dut.io.coin5.poke(d.btnVal(1).B)
+        dut.io.buy.poke(d.btnVal(2).B)
+
+        d.repaint()
+        Thread.sleep(10)
       }
-      an >>= 1
     }
-
-    d.ledVal(15) = peek(dut.io.releaseCan) == 1
-    d.ledVal(0) = peek(dut.io.alarm) == 1
-    var price = 0
-    for (i <- 0 until 5) {
-      price <<= 1
-      price += (if (d.switches(4-i).selected) 1 else 0)
-    }
-    poke(dut.io.price, price)
-    poke(dut.io.coin2, d.btnVal(0))
-    poke(dut.io.coin5, d.btnVal(1))
-    poke(dut.io.buy, d.btnVal(2))
-
-    d.repaint()
-    Thread.sleep(10)
   }
 
-}
-
-
-object VendingSimulation extends App {
-
-  val display = new VendingSimulation
-  display.visible = true
-
-  chisel3.iotesters.Driver(() => new VendingMachine(20))
-  { c => new VendingDriver(c, display) }
 
 }
