@@ -1,4 +1,4 @@
-# Lab 6: Test Drive the Seven-Segment Display
+# Lab 8: Test Drive the Seven-Segment Display
 
 This lab is your next step towards your vending machine.
 It is described in  more detail in the **Vending Machine Specification**

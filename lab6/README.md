@@ -1,4 +1,4 @@
-# Lab 4: Seven Segment Decoder
+# Lab 6: Seven Segment Decoder
 
 This lab is your first step towards your final project, the vending
 machine.

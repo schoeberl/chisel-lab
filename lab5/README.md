@@ -1,4 +1,4 @@
-# Lab 11: A Simple Tester
+# Lab 5: A Simple Tester
 
 In this lab you shall write test code for a 5:1 multiplexer. The interface
 of the multiplexer is:
@@ -43,6 +43,6 @@ With IntelliJ import the lab project as follows:
  * Start IntelliJ
  * Click *Import Project*, or on a running IntelliJ: *File - New -
 Project from Existing Source...*
- * Navigate to ```.../lab11``` and select the file ```build.sbt```, press *Open*
+ * Navigate to ```.../lab5``` and select the file ```build.sbt```, press *Open*
  * Press OK on the next dialog box
 

@@ -1,4 +1,4 @@
-# Lab 8 and 9: Multiplexed Seven-Segment Display
+# Lab 9: Multiplexed Seven-Segment Display
 
 This lab is your next step towards your vending machine.
 It is described in more detail in the [Vending Machine Specification](https://learn.inside.dtu.dk/d2l/common/viewFile.d2lfile/Content/L2NvbnRlbnQvZW5mb3JjZWQvNjAyMzgtT0ZGRVJJTkctNjMzODE1L1ZlbmRpbmdNYWNoaW5lLnBkZg/VendingMachine.pdf?ou=60238),
@@ -9,7 +9,7 @@ The switches are used as input for the four digits.
 Similar to last lab you need to generate timing with counter
 to switch the display and drive the multiplexer.
 
-Reuse ```SevenSegDec.scala``` from Lab 6. Run:
+Reuse ```SevenSegDec.scala``` from your former lab exercise. Run:
 
 ```
 sbt "testOnly DisplaySpec"
