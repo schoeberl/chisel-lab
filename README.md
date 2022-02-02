@@ -47,7 +47,6 @@ read the [Vending Machine Specification](https://learn.inside.dtu.dk/d2l/common/
 11 -> 5
 4 -> 6
 6 -> 8
-8 -> 9
 10 -> testing the VM
 11, 12 vending machine
 
