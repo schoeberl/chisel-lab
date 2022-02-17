@@ -27,8 +27,6 @@ pull requests. Even the fix of a small typo is appreciated.
 ## Lab Overview
 
 The following list gives an overview of all lab sessions and assignments.
-For lab sessions where no link is given, we will provide the material in
-[DTU Inside](https://www.inside.dtu.dk).
 For the Vending Machine related labs (week 5, 6, 8, 9, 10, and 12) please
 read the [Vending Machine Specification](https://learn.inside.dtu.dk/d2l/common/viewFile.d2lfile/Content/L2NvbnRlbnQvZW5mb3JjZWQvNjAyMzgtT0ZGRVJJTkctNjMzODE1L1ZlbmRpbmdNYWNoaW5lLnBkZg/VendingMachine.pdf?ou=60238).
 
