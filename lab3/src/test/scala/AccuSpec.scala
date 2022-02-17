@@ -21,6 +21,7 @@ class AccuSpec extends AnyFlatSpec with ChiselScalatestTester {
       dut.io.dout.expect(0.U)
       dut.io.setZero.poke(false.B)
       dut.io.din.poke(3.U)
+      dut.clock.step(1)
       dut.io.dout.expect(3.U)
     }
   }
