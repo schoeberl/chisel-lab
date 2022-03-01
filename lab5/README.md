@@ -18,7 +18,7 @@ class Mux5 extends Module {
 }
 ```
 
-Write the test code for the ```Mux5``` implementation. Try to **not**
+Write the test code for the ```Mux5``` implementation. Try **not** to
 look into the implementation. The implementation has errors.
 Your job is to show those errors with your test code. You do not
 need to correct the errors in ```Mux5```.
