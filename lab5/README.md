@@ -24,11 +24,9 @@ Your job is to show those errors with your test code. You do not
 need to correct the errors in ```Mux5```.
 
 There is no *starting* code given. You need to start from scratch
-(look into an older lab for test examples). You have two options:
+(look into an older lab for test examples).
 
- * Call the tester from an ```App``` (= main), place your code
-in ```src/main/scala```, and run your test with ```sbt run```, or
- * Call the tester from a ScalaTest, place your code
+ * Use ChiselTest and place your code
    in ```src/test/scala```, and run your test with ```sbt test```.
 
 ## Background Reading
