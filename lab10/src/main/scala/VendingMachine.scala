@@ -1,6 +1,35 @@
 import chisel3._
 import chisel3.util._
 
+class BlackVendingA() extends HasBlackBoxPath {
+  val io = IO(new Bundle {
+    val price = Input(UInt(5.W))
+    val coin2 = Input(Bool())
+    val coin5 = Input(Bool())
+    val buy = Input(Bool())
+    val releaseCan = Output(Bool())
+    val alarm = Output(Bool())
+    val seg = Output(UInt(7.W))
+    val an = Output(UInt(4.W))
+  })
+  addPath("./src/main/verilog/VendingA.v")
+}
+
+class BlackVendingB() extends HasBlackBoxPath {
+  val io = IO(new Bundle {
+    val price = Input(UInt(5.W))
+    val coin2 = Input(Bool())
+    val coin5 = Input(Bool())
+    val buy = Input(Bool())
+    val releaseCan = Output(Bool())
+    val alarm = Output(Bool())
+    val seg = Output(UInt(7.W))
+    val an = Output(UInt(4.W))
+  })
+  addPath("./src/main/verilog/VendingB.v")
+}
+
+
 class VendingMachine(maxCount: Int) extends Module {
   val io = IO(new Bundle {
     val price = Input(UInt(5.W))
@@ -13,22 +42,15 @@ class VendingMachine(maxCount: Int) extends Module {
     val an = Output(UInt(4.W))
   })
 
-  val sevSeg = WireInit(0.U)
-
-  // ***** some dummy connections *****
-  sevSeg := "b1111111".U
-
-  io.alarm := io.coin2
-  io.releaseCan := io.coin5
-
-
-  io.seg := ~sevSeg
-  io.an := "b1110".U
+  // Switch between the two vending machines here.
+  val vending = Module(new BlackVendingA)
+  // val vending = Module(new BlackVendingB)
+  vending.io <> io
 }
 
 // generate Verilog
 object VendingMachine extends App {
-  (new chisel3.stage.ChiselStage).emitVerilog(new VendingMachine(100000))
+  emitVerilog(new VendingMachine(100000))
 }
 
 
