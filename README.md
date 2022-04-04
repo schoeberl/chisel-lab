@@ -39,7 +39,7 @@ read the [Vending Machine Specification](https://learn.inside.dtu.dk/d2l/common/
  * Lab 7: Paper and pencil on FSM
  * [Lab 8: Test Drive the Seven-Segment Display](lab8)
  * [Lab 9: Multiplexed Seven-Segment Display](lab9)
- * Lab 10: Testing the Vending Machine (TBD)
+ * [Lab 10: Testing the Vending Machine](lab10)
  * [Lab 11, 12: The Vending Machine](vending)
 
 
