@@ -15,7 +15,7 @@ This folder contains the setup of the full Vending Machine project.
 It includes a top-level of the design (```VendingMachine```), the
 constraint file ```vedning.xdc``` for the pin definitions,
 a start for a test (```VendingTester```), and a simulation of the Basys 3
-board (```VedningSimulation```).
+board (```VendingSimulation```).
 
 ## Vending Machine Specification
 
@@ -63,7 +63,9 @@ Please explain and include any optional design work in your report.
  * Supplement the alarm by visual signal, for example blinking the sum display.
  * Count coins and assert alarm if a coin compartment is full (>20 of given type ).
  * Maximum number of cans in the machine; for example 20. If the machine gets empty show ```EPty``` in the four seven-segment displays.
- * Implement a digital debouncer circuit. This will allow you to use the pushbuttons on the Basys 3 board itself (instead of the extermal Pmod BTN pushbutton module).
+ * Implement a digital debouncer circuit. This will allow you to use the push buttons on the Basys 3 board itself (instead of the extermal Pmod BTN pushbutton module).
+ * Connect a [UART](https://github.com/schoeberl/chisel-book/blob/master/src/main/scala/uart/uart.scala) to your VM and sending messages to your laptop
+ * ... your ideas
 
 The *standard solution* without any optional tasks is considered a
 *standard performance*. To obtain a top grade (i.e., 10 or 12)
