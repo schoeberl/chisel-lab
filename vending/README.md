@@ -17,6 +17,8 @@ constraint file ```vedning.xdc``` for the pin definitions,
 a start for a test (```VendingTester```), and a simulation of the Basys 3
 board (```VendingSimulation```).
 
+![basys](basys-vending.jpg)
+
 ## Vending Machine Specification
 
 The vending machine sells one type of canned soft drink.
