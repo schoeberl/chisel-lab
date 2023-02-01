@@ -8,7 +8,7 @@ Here is a summary of the tools we need:
  * [Java OpenJDK 8 or later](https://adoptopenjdk.net/)
  * [sbt](https://www.scala-sbt.org/)
  * [IntelliJ](https://www.jetbrains.com/idea/download/) (the free Community version)
- * [Vivado WebPACK](https://www.xilinx.com/products/design-tools/vivado/vivado-webpack.html)
+ * [Vivado WebPACK](https://www.xilinx.com/products/design-tools/vivado/vivado-webpack.html) Use an older version (e.g., 2017) to save some disk space.
  * [GTKWave](http://gtkwave.sourceforge.net/)
  * make, git (for command line usage) (alternatively, a GUI Git client, see the section further down)
 
