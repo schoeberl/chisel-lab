@@ -38,7 +38,7 @@ class MajorityPrinter extends AnyFlatSpec with ChiselScalatestTester {
         dut.io.b.poke(b.B)
         dut.io.c.poke(c.B)
         dut.clock.step(1)
-        val out = dut.io.out.peek.litToBoolean
+        val out = dut.io.out.peekInt().toInt
         println(s"$a $b $c -> $out")
       }
     }

@@ -9,7 +9,7 @@ class DecoderSpec extends AnyFlatSpec with ChiselScalatestTester {
         dut.io.sel.poke(n.U)
         dut.clock.step(1)
         val res = 1 << n
-        println(n + " " + res)
+        println(s"$n $res")
         dut.io.out.expect(res.U)
       }
     }

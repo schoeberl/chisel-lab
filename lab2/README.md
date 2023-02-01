@@ -85,18 +85,24 @@ sbt "testOnly MajorityPrinter"
 Run the ```MajorityPrinter``` and watch the printout of the logic table:
 
 ```
-[info] [0.002] Logic table for Majority
-[info] [0.002] a b c -> out
-[info] [0.016] 0 0 0 -> 0
-[info] [0.017] 1 0 0 -> 1
-[info] [0.018] 0 1 0 -> 0
-[info] [0.019] 1 1 0 -> 1
-[info] [0.021] 0 0 1 -> 0
-[info] [0.022] 1 0 1 -> 1
-[info] [0.023] 0 1 1 -> 0
-[info] [0.024] 1 1 1 -> 1
-test Majority Success: 0 tests passed in 13 cycles taking 0.045750 seconds
-[info] [0.025] RAN 8 CYCLES PASSED
+Logic table for Majority
+  a     b     c   -> out
+false false false -> 0
+true false false -> 1
+false true false -> 0
+true true false -> 1
+false false true -> 0
+true false true -> 1
+false true true -> 0
+true true true -> 1
+[info] MajorityPrinter:
+[info] Majority print results
+[info] - should pass
+[info] Run completed in 1 second, 246 milliseconds.
+[info] Total number of tests run: 1
+[info] Suites: completed 1, aborted 0
+[info] Tests: succeeded 1, failed 0, canceled 0, ignored 0, pending 0
+[info] All tests passed.
 ```
 
 This shows that the default implementation just copies the value of ```a```

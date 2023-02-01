@@ -10,7 +10,7 @@ class HelloSpec extends AnyFlatSpec with ChiselScalatestTester {
       dut.clock.setTimeout(0)
       for (i <- 0 until 100) {
         dut.clock.step(10000)
-        val ledNow = dut.io.led.peek.litValue.toInt
+        val ledNow = dut.io.led.peekInt().toInt
         val s = if (ledNow == 0) "o" else "*"
         if (ledStatus != ledNow) {
           System.out.println(s)
