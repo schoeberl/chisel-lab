@@ -149,10 +149,10 @@ and automate.
 
 ![Mux](../figures/mux.svg)
 
-A multplexer selects between different input signals. In the above figure
+A multiplexer selects between different input signals. In the above figure
 it is a 2:1 multiplexer. With ```sel``` we route either input ```a``` or
 input ```b``` to output ```y```. We assume in this example that ```a```
-is slected when ```sel``` is ```0``` or ```false```, otherwise  ```b```.
+is selected when ```sel``` is ```0``` or ```false```, otherwise  ```b```.
 
 Open the ```Mux2``` component to implement the multiplexer.
 You can test your implementation with:
