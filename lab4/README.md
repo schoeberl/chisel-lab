@@ -23,11 +23,13 @@ look into the implementation. The implementation has errors.
 Your job is to show those errors with your test code. You do not
 need to correct the errors in ```Mux5```.
 
-There is no *starting* code given. You need to start from scratch
-(look into an older lab for test examples).
-
- * Use ChiselTest and place your code
+ * There is a *starting* code given in ```src/test/scala```.
+ * Use ChiselTest and edit the code
    in ```src/test/scala```, and run your test with ```sbt test```.
+ * The empty test will pass, however, you need to do a test that shows
+   that there is an error. Your test shall fail at the end.
+ * Try to find out what the error is just with your testing, not showing
+   into the DUT.
 
 ## Background Reading
 
@@ -41,6 +43,6 @@ With IntelliJ import the lab project as follows:
  * Start IntelliJ
  * Click *Import Project*, or on a running IntelliJ: *File - New -
 Project from Existing Source...*
- * Navigate to ```.../lab5``` and select the file ```build.sbt```, press *Open*
+ * Navigate to ```.../lab4``` and select the file ```build.sbt```, press *Open*
  * Press OK on the next dialog box
 
