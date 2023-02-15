@@ -1,4 +1,4 @@
-# Lab 5: A Simple Tester
+# Lab 4: A Simple Tester
 
 In this lab you shall write test code for a 5:1 multiplexer. The interface
 of the multiplexer is:
