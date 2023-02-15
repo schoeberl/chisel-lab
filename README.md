@@ -33,8 +33,7 @@ read the [Vending Machine Specification](https://learn.inside.dtu.dk/d2l/common/
  * [Lab 1: Hello World in Chisel](lab1)
  * [Lab 2: Combinational Circuits in Chisel](lab2)
  * [Lab 3: Components and Small Sequential Circuits](lab3)
- * Lab 4: Paper and pencil on timing
- * [Lab 5: A Simple Tester](lab5)
+ * [Lab 4: A Simple Tester](lab4)
  * [Lab 6: Seven Segment Decoder](lab6)
  * Lab 7: Paper and pencil on FSM
  * [Lab 8: Test Drive the Seven-Segment Display](lab8)
