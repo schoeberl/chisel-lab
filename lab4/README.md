@@ -93,7 +93,7 @@ You can now write test code to verify the correct behavior of the component. Mor
 * The dut asserts full when 8 numbers have been inserted
 * Inserting new values when the dut asserts full does not change the internal sequence
 * The dut deasserts full after a remove operation has finished on a previously full dut
-* A non.empty dut always presents the currently largest number in the sequence on `io.root` when `io.ready` is asserted
+* A non-empty dut always presents the currently largest number in the sequence on `io.root` when `io.ready` is asserted
 
 
 
