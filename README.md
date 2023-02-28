@@ -34,9 +34,7 @@ read the [Vending Machine Specification](https://learn.inside.dtu.dk/d2l/common/
  * [Lab 2: Combinational Circuits in Chisel](lab2)
  * [Lab 3: Components and Small Sequential Circuits](lab3)
  * [Lab 4: A Simple Tester](lab4)
- * [Lab 6: Seven Segment Decoder](lab6)
- * Lab 7: Paper and pencil on FSM
- * [Lab 8: Test Drive the Seven-Segment Display](lab8)
+ * [Lab 5: Seven Segment Decoder and Test](lab5)
  * [Lab 9: Multiplexed Seven-Segment Display](lab9)
  * [Lab 10: Testing the Vending Machine](lab10)
  * [Lab 11, 12: The Vending Machine](vending)
