@@ -50,7 +50,7 @@ hardware is needed to produce the 2 Hz timing.
 Reuse your table from first part of the lab.
 
 The test circuit shall be implemented in ```CountSevenSeg.scala```. You need
-to instantiate the ```SevenSegDec``` module, add your test circuit,
+to instantiate the ```SevenSegDecoder``` module, add your test circuit,
 and connect the module.
 
 A simple test is provided, which you can run with
