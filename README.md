@@ -34,7 +34,8 @@ For the Vending Machine related labs please show them to a TA to get a tick.
  * [Lab 3: Components and Small Sequential Circuits](lab3)
  * [Lab 4: A Simple Tester](lab4)
  * [Lab 5: Seven Segment Decoder and Test](lab5)
- * [Lab 9: Multiplexed Seven-Segment Display](lab9)
+ * [Lab 6: Multiplexed Seven-Segment Display](lab6)
+ * [Lab 7: Using an External Component: a Serial Port)](lab7)
  * [Lab 10: Testing the Vending Machine](lab10)
  * [Lab 11, 12: The Vending Machine](vending)
 
