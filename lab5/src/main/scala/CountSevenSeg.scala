@@ -6,7 +6,7 @@ class CountSevenSeg extends Module {
     val an = Output(UInt(4.W))
   })
 
-  val sevSeg = WireInit("b1111111".U(7.W))
+  val sevSeg = WireDefault("b1111111".U(7.W))
 
   // *** your code starts here
 

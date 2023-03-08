@@ -11,7 +11,7 @@ class AddSub extends Module {
   val a = io.a
   val b = io.b
   val selAdd = io.selAdd
-  val res = WireInit(0.U(4.W))
+  val res = WireDefault(0.U(4.W))
 
   // ***** your code starts here *****
 

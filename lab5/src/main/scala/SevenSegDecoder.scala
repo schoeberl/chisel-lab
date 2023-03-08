@@ -8,7 +8,7 @@ class SevenSegDecoder extends Module {
     val an = Output(UInt(4.W))
   })
 
-  val sevSeg = WireInit(0.U(7.W))
+  val sevSeg = WireDefault(0.U(7.W))
 
   // ***** your code starts here *****
 

@@ -13,7 +13,7 @@ class VendingMachine(maxCount: Int) extends Module {
     val an = Output(UInt(4.W))
   })
 
-  val sevSeg = WireInit(0.U)
+  val sevSeg = WireDefault(0.U)
 
   // ***** some dummy connections *****
   sevSeg := "b1111111".U
