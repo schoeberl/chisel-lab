@@ -23,8 +23,10 @@ board (```VendingSimulation```).
 
 The vending machine sells one type of canned soft drink.
 The price of a can is set by the owner of the machine using 5 switches.
-Using unsigned binary representation this allow a price range from 0 kr. to 31 kr.
-The price is displayed on two seven-segment displays using hexadecimal representation.
+Using unsigned binary representation this allows a price range from 0 kr. to 31 kr.
+The price is displayed on two seven-segment displays in decimal representation.
+The other two seven-segment displays show the amount of money entered so far.
+
 
 The machine accepts two types of coins: 2 kroner and 5 kroner.
 The inputting of coins is emulated by two push-buttons called ```coin2```
@@ -61,12 +63,11 @@ you may want to extend your design. Below is a list of ideas.
 You may have more ideas.
 Please explain and include any optional design work in your report.
 
- * Display price and sum as decimal numbers making the machine less nerdy.
  * Supplement the alarm by visual signal, for example blinking the sum display.
  * Count coins and assert alarm if a coin compartment is full (>20 of given type ).
  * Maximum number of cans in the machine; for example 20. If the machine gets empty show ```EPty``` in the four seven-segment displays.
- * Implement a digital debouncer circuit. This will allow you to use the push buttons on the Basys 3 board itself (instead of the extermal Pmod BTN pushbutton module).
- * Connect a [UART](https://github.com/schoeberl/chisel-book/blob/master/src/main/scala/uart/uart.scala) to your VM and sending messages to your laptop
+ * Implement a digital debouncer circuit. This will allow you to use the push buttons on the Basys 3 board itself (instead of the external Pmod BTN push-button module).
+ * Connect a [UART](https://github.com/schoeberl/chisel-book/blob/master/src/main/scala/uart/uart.scala) to your VM and sending messages to your laptop.
  * ... your ideas
 
 The *standard solution* without any optional tasks is considered a
@@ -204,6 +205,18 @@ DTU Learn performs a check for plagiarism, and we assume that you are
 aware of DTU's policy on this (see: Studiehaandbog, Regelsamling, afsnit 3.9
 "Snyd ved eksamen og anden bedoemmelse").
 
+**If you want, you are allowed to use the help of ChatGPT to write your report.**
+In that case, state in the preface that you used ChatGPT to write/enhance the
+report and cite ChatGPT. You ae still responsible for the text and any
+nonsense that ChatGPT writes.
+
+**If you want, you are allowed to use the help of ChatGPT and/or Copilot
+to help you in Chisel coding.**
+In that case, have a section on reflecting how helpful those tools were
+and what you learned from using them. Cite the tools.
+You are still responsible for the  code and any nonsense that ChatGPT
+or Copilot writes.
+
 The cover page of the report must contain the following information:
 
  1. Number and name of the course:  02139: Digital Electronics 2. (Danish: "02139 Digital elektronik 2").
@@ -217,7 +230,7 @@ The rest of the documents contains:
  2. The body of the report should cover the preparation and the lab work for laboratory exercises. 
  3. As a guideline the report should be about 10 pages of text, excluding figures and appendices. Include appendices with Chisel code (only files you have written or modified) and screen-dumps of the wave-window to document your simulations.
  4. Have block diagram figures for your design.
- 5. A state diagramm for your FSM.
+ 5. A state diagram for your FSM.
  6. A schematics of your datapath.
  7. All figures need to be drawn ``nicely''; that means with a drawing program and not hand drawn and a picture taken. 
  
@@ -247,7 +260,7 @@ A report is not a lab notebook, nor a set of problem solutions.
 A report is a stand-alone document that is written after all the work
 has been performed. However, it is good practice to take notes in electronic form during your work for a collection of facts. When writing the report, remember that the aim is to explain to an outsider and in the most efficient way possible what has been done, how it has been done, and the conclusions that can be drawn from the work. Be brief, and make sure the reader knows where you are heading. The report should present the material in a logical order, which is sometimes different from the order in which the tasks were performed.
 
-Finally a word about copyright: You are *not* allowed to silently copy figures
+Finally, a word about copyright: You are *not* allowed to silently copy figures
 or text from other documents! In general the rules are as follows:
 
 You are allowed to reuse short passages of text provided that you clearly state this. In the running text you can do this by writing:
