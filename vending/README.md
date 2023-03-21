@@ -217,6 +217,9 @@ and what you learned from using them. Cite the tools.
 You are still responsible for the  code and any nonsense that ChatGPT
 or Copilot writes.
 
+**If you use ChatGPT, Copilot, or any AI as help, write an extra section
+reflecting on the experience.** What did you learn? What did you not learn?
+
 The cover page of the report must contain the following information:
 
  1. Number and name of the course:  02139: Digital Electronics 2. (Danish: "02139 Digital elektronik 2").
@@ -246,8 +249,9 @@ Preface. (Who did what etc.)
 4. Test (how was it tested)
 5. Results  (Objective figures and facts)
 6. Discussions (Your reflections)
-7. Conclusion (Summary and goodbye)
-8. List of References
+7. Experiences Using AI Tools (if used, reflections on usage of ChatGPT, Copilot, etc.)
+8. Conclusion (Summary and goodbye)
+9. List of References
 
 Appendix A: Chisel code for the design
 
