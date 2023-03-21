@@ -8,8 +8,10 @@ import chisel3.util._
 class SerialPort(frequ: Int) extends Module {
   val io = IO(new Bundle {
     val tx = Output(Bool())
+    val led = Output(Bool())
   })
-
+  io.tx := true.B
+  io.led := true.B
 }
 
 // generate Verilog
