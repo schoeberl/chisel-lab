@@ -1,4 +1,4 @@
-# Lab 9: Multiplexed Seven-Segment Display
+# Lab 6: Multiplexed Seven-Segment Display
 
 In this lab you will extend your seven-segment decoder to display
 four digits in a time-multiplexed manner.
