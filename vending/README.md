@@ -24,7 +24,7 @@ board (```VendingSimulation```).
 The vending machine sells one type of canned soft drink.
 The price of a can is set by the owner of the machine using 5 switches.
 Using unsigned binary representation this allows a price range from 0 kr. to 31 kr.
-The price is displayed on two seven-segment displays in decimal representation.
+The price is displayed on two seven-segment displays in hexadecimal representation.
 The other two seven-segment displays show the amount of money entered so far.
 
 
