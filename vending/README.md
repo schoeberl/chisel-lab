@@ -88,9 +88,10 @@ Based on this list of clock-cycle operations and the list of registers you
 should be able to design a datapath. There is a lot of freedom and many alternatives.
 In our case it should suffice to be able to do one single arithmetic operation
 in a clock cycle, i.e., to use only one single adder/subtractor in the datapath.
-When the datapath is in place, the next step is to design the finite state machine
+When the datapath is in place, the next step is to design the finite state machine (FSM)
 that will control the sequence of operations in the datapath and deliver the
-output signals ```releaseCan``` and ```alarm```.
+output signals ```releaseCan``` and ```alarm```. This combination of a datapath
+with and FSM is called a state machine with datapath (FSMD).
 
 In summary the design phase involves the following:
 
