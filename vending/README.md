@@ -225,8 +225,7 @@ The cover page of the report must contain the following information:
 
  1. Number and name of the course:  02139: Digital Electronics 2. (Danish: "02139 Digital elektronik 2").
  2. Title of the report:  Vending Machine Project.   (Danish: "Sodavandsautomat projekt").
- 3. Name, student id number, and a passport size photo of each team member.
-
+ 3. Student id numbers.
 
 The rest of the documents contains:
 
@@ -257,9 +256,6 @@ Preface. (Who did what etc.)
 Appendix A: Chisel code for the design
 
 Appendix B: Chisel code for test-benches
-
-Appendix C: ??
-
 
 A report is not a lab notebook, nor a set of problem solutions.
 A report is a stand-alone document that is written after all the work
