@@ -5,10 +5,12 @@ This documents describes how to setup all tools on Linux/Ubuntu
 and on Windows.
 Here is a summary of the tools we need:
 
- * [Java OpenJDK 8 or later](https://adoptopenjdk.net/)
+ * [Java OpenJDK 8 or later (up to 17, not 21)](https://adoptopenjdk.net/)
  * [sbt](https://www.scala-sbt.org/)
  * [IntelliJ](https://www.jetbrains.com/idea/download/) (the free Community version)
  * [Vivado WebPACK](https://www.xilinx.com/products/design-tools/vivado/vivado-webpack.html) Use an older version (e.g., 2017) to save some disk space.
+   * E.g.: https://www.xilinx.com/member/forms/download/xef.html?filename=Xilinx_Unified_2020.2_1118_1232_Win64.exe
+   * https://www.xilinx.com/member/forms/download/xef.html?filename=Xilinx_Unified_2020.2_1118_1232_Lin64.bin
  * [GTKWave](http://gtkwave.sourceforge.net/)
  * make, git (for command line usage) (alternatively, a GUI Git client, see the section further down)
 
