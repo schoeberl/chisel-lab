@@ -30,7 +30,7 @@ for this virtual machine. Note, that this VM is BIG. The .zip file is 44 GB.
 
 Chisel is *just* a library for Scala. And Scala is just a language that executes
 on the Java virtual machine (JVM) and uses the Java library. Therefore, you need to have
-[Java OpenJDK 8 or later](https://adoptopenjdk.net/) installed on your laptop.
+[Java OpenJDK 8 or later (max 21)](https://adoptopenjdk.net/) installed on your laptop.
 
 For working on the command line you should also install
 [sbt](https://www.scala-sbt.org/), the Scala build tool.
@@ -80,7 +80,7 @@ Instead of running the apt commands manually you can also run the provided ```se
 ## Windows 10
 
  * Install Vivado (see above) and the Digilent board files
- * Install OpenJDK 8 or later from [AdoptOpenJDK](https://adoptopenjdk.net/)
+ * Install OpenJDK 8 or later (up to 17) from [AdoptOpenJDK](https://adoptopenjdk.net/)
  * Install [sbt](https://www.scala-sbt.org/)
  * Install [IntelliJ](https://www.jetbrains.com/idea/download/)
    * The community edition
@@ -117,7 +117,7 @@ Vivado is not supported under macOS, however, the Chisel tool flow runs fine
 on the Mac. You can simulate your design on the Mac and use a virtual machine
 (e.g., with Ubuntu) to synthesize your design with Vivado.
 
- * Install OpenJDK 8 or later from [AdoptOpenJDK](https://adoptopenjdk.net/)
+ * Install OpenJDK 8 or later (up to 17) from [AdoptOpenJDK](https://adoptopenjdk.net/)
  * Install sbt with ```brew install sbt```
  * Install [GTKWave](http://gtkwave.sourceforge.net/)
  * Install [IntelliJ](https://www.jetbrains.com/idea/download/)
