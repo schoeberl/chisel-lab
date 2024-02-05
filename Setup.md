@@ -131,6 +131,10 @@ on the Mac. You can simulate your design on the Mac and use a virtual machine
      * Select *JDK*
      * Select the path to your OpenJDK installation
 
+## Mac with Arm chip (M1 or M2)
+
+ * To run Vivado on a Mac with an Arm chip see [MacM1.md](MacM1.md).
+
 ## Common Error
 
 Here we collect common issues when installing the tools. Also refer to the [FAQ](FAQ.md)
