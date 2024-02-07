@@ -16,14 +16,16 @@ Here is a summary of the tools we need:
 
 ## Ubuntu Virtual Machine
 
-The easiest way to get all tools installed is to use the Ubuntu virtual machine
-provided at:
+The easiest way to get all tools installed is to use the Ubuntu virtual machine provided at:
 
- * [Ubuntu VM](https://patmos-download.compute.dtu.dk/de2lab.zip)
+ * [Ubuntu VM](https://patmos-download.compute.dtu.dk/de2lab.ova)
 
-The user is ```de2lab``` and the password is ```de2lab```. You need the free
-[VMWare Player](https://my.vmware.com/en/web/vmware/free#desktop_end_user_computing/vmware_workstation_player/15_0)
-for this virtual machine. Note, that this VM is BIG. The .zip file is 44 GB.
+The user is ```de2lab``` and the password is ```de2lab```. You need the free [Virtual Box](https://www.virtualbox.org/wiki/Downloads)
+for this virtual machine. Note, that this VM is BIG. The downloaded file is 43 GB and the extracted virtual machine fills around 77 GB.
+
+Use the *File* >> *Import Appliance...* option in Virtual Box, to extract the virtual machine from the image. Then start the virtual machine. 
+In order to bridge the USB connection to your FPGA into the virtual machine, go to *devices* >> *USB* in the top of the virtual machine window 
+and select the FPGA in the menu.
 
 
 ## Chisel
