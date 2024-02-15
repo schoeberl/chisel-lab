@@ -24,14 +24,14 @@ board (```VendingSimulation```).
 The vending machine sells one type of canned soft drink.
 The price of a can is set by the owner of the machine using 5 switches.
 Using unsigned binary representation this allows a price range from 0 kr. to 31 kr.
-The price is displayed on two seven-segment displays in hexadecimal representation.
+The price is displayed on two seven-segment displays in decimal representation.
 The other two seven-segment displays show the amount of money entered so far.
 
 
 The machine accepts two types of coins: 2 kroner and 5 kroner.
 The inputting of coins is emulated by two push-buttons called ```coin2```
 and ```coin5```. The amount entered so far (called ```sum```) is displayed
-on the left two seven-segment displays using hexadecimal representation.
+on the left two seven-segment displays in decimal (hexadecimal representation can be used for a start).
 When enough money has been entered, the customer may press a button ```buy```.
 In response the machine will activate a signal ```releaseCan``` for as long as
 ```buy``` is pressed and subtract the ```price``` of a can from the ```sum```.
