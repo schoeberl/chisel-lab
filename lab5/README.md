@@ -74,6 +74,8 @@ For more information, look into the
 documentation. You can also find the pin definitions in the
 [Schematic of the IO](https://reference.digilentinc.com/basys3/refmanual#basic_io).
 
+*Can you draw the schematic of your design described in Chisel?*
+
 When your design works in the FPGA, show it to a TA for an OK
 tick in the list. **This is part of your grade.**
 
