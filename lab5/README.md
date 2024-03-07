@@ -41,10 +41,6 @@ The test circuit shall drive the seven-segment display with a counter
 to show all possible values. The counter shall count at a frequency
 of around 2 Hz for easy following by a human.
 
-For a start, you can connect the clock input to a button for manual
-clocking. However, the final solution shall use the 100 MHz clock, and additional
-hardware is needed to produce the 2 Hz timing.
-
 Reuse your table from the first part of the lab.
 
 The test circuit shall be implemented in ```CountSevenSeg.scala```. You need
