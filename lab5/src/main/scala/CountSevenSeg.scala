@@ -13,7 +13,7 @@ class CountSevenSeg extends Module {
 
   // *** your code ends here
 
-  io.seg := ~sevSeg
+  io.seg := sevSeg
   io.an := "b1110".U
 }
 
