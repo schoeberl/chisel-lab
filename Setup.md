@@ -122,6 +122,9 @@ on the Mac. You can simulate your design on the Mac and use a virtual machine
  * Install OpenJDK 8 or later (up to 17) from [AdoptOpenJDK](https://adoptopenjdk.net/)
  * Install sbt with ```brew install sbt```
  * Install [GTKWave](http://gtkwave.sourceforge.net/)
+   * For MacOS 14 following installation is possible:
+   * `brew install --HEAD randomplum/gtkwave/gtkwave`
+   * see [this issue](https://github.com/gtkwave/gtkwave/issues/250)
  * Install [IntelliJ](https://www.jetbrains.com/idea/download/)
    * The community edition
    * Include Create Desktop Shortcut
@@ -133,7 +136,8 @@ on the Mac. You can simulate your design on the Mac and use a virtual machine
      * Select *JDK*
      * Select the path to your OpenJDK installation
 
-## Mac with Arm chip (M1 or M2)
+
+## Mac with Arm chip (M1, M2, or M3)
 
  * To run Vivado on a Mac with an Arm chip see [MacM1.md](MacM1.md).
 
