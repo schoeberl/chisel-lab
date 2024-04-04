@@ -20,7 +20,6 @@ set_property CONFIG_VOLTAGE 3.3 [current_design]
 set_property CFGBVS VCCO [current_design]
 
 ##USB-RS232 Interface
-#set_property PACKAGE_PIN B18 [get_ports RsRx]
 set_property PACKAGE_PIN A18 [get_ports io_tx]
 set_property PACKAGE_PIN B18 [get_ports io_rx]
 

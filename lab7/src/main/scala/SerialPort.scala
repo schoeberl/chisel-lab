@@ -2,8 +2,7 @@ import chisel3._
 import chisel3.util._
 
 /**
-  * This is the top level to develop the display multiplexing circuit.
-  * The multiplexing circuit is in the DisplayMultiplexer.
+  * This is the top level to for the UART output and a test blinking LED.
   */
 class SerialPort(frequ: Int) extends Module {
   val io = IO(new Bundle {
