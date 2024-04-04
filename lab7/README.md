@@ -39,7 +39,7 @@ The UART component is a Chisel module. You can instantiate it with the
 following code:
 
 ```scala   
-val uart = Module(new BufferedTx(115200, 100000000))
+val uart = Module(new BufferedTx(100000000, 115200))
 ```
 
 The first parameter is the baud rate, the second parameter is the clock
