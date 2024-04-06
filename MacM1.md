@@ -37,5 +37,7 @@ exit
 ```
    * Get the .bit file (from the Windows machine) and set the name in the `7series.txt`
    * Configure with: `openocd -f 7series.txt`
+   * On the Mac: `ls -l /dev/cu.*`
+   * Serial port: `screen /dev/cu.usbserial-.... 115200`
 
 
