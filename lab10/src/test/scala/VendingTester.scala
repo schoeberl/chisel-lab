@@ -5,6 +5,7 @@ import org.scalatest.flatspec.AnyFlatSpec
 class VendingTester extends AnyFlatSpec with ChiselScalatestTester {
   "Vending machine test" should "pass" in {
     test(new VendingMachine(20)).withAnnotations(Seq(WriteVcdAnnotation, VerilatorBackendAnnotation)) { c =>
+    //    test(new VendingMachine(20)).withAnnotations(Seq(WriteVcdAnnotation, IcarusBackendAnnotation)) { c =>
 
       def pay2 = {
         c.io.coin2.poke(true.B)
