@@ -28,7 +28,7 @@ class VendingMachine(maxCount: Int) extends Module {
 
 // generate Verilog
 object VendingMachine extends App {
-  (new chisel3.stage.ChiselStage).emitVerilog(new VendingMachine(100000))
+  emitVerilog(new VendingMachine(100000))
 }
 
 
