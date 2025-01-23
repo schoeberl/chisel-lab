@@ -139,8 +139,8 @@ object VendingSimulation extends App {
     while (d.running) {
 
       dut.clock.step(4)
-      var an = dut.io.an.peek.litValue.toInt
-      val seg = dut.io.seg.peek.litValue.toInt
+      var an = dut.io.an.peekInt().toInt
+      val seg = dut.io.seg.peekInt().toInt
       for (i <- 0 until 4) {
         if ((an & 1) == 0) {
           d.digits(3 - i) = ~seg
@@ -148,8 +148,8 @@ object VendingSimulation extends App {
         an >>= 1
       }
 
-      d.ledVal(15) = dut.io.releaseCan.peek.litValue == 1
-      d.ledVal(0) = dut.io.alarm.peek.litValue == 1
+      d.ledVal(15) = dut.io.releaseCan.peekInt() == 1
+      d.ledVal(0) = dut.io.alarm.peekInt() == 1
       var price = 0
       for (i <- 0 until 5) {
         price <<= 1

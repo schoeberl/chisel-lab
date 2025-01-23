@@ -5,7 +5,7 @@ This documents describes how to setup all tools on Linux/Ubuntu
 and on Windows.
 Here is a summary of the tools we need:
 
- * [Java OpenJDK 8 or later (up to 17, **NOT** 21)](https://adoptopenjdk.net/)
+ * [Java OpenJDK 8 or later (up to 21)](https://adoptopenjdk.net/)
  * [sbt](https://www.scala-sbt.org/)
  * [IntelliJ](https://www.jetbrains.com/idea/download/) (the free Community version)
  * Vivado (e.g. 2023.1)
