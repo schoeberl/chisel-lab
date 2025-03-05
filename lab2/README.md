@@ -171,7 +171,7 @@ with ```when``` and ```.otherwise```.
 Look it up in Chapter 5 of the Chisel book and implement the
 Multiplexer.
 
-As multiplexing is such a fundamental operation, that Chisel provides
+As multiplexing is such a fundamental operation, that Chisel
 provides a multiplexer component ```Mux```.
 Implement you final version of a multiplexer by using the ```Mux```
 component.

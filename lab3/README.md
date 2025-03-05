@@ -97,7 +97,7 @@ sbt "testOnly Count6Spec"
 ### An Accumulator
 
 As the last exercise on small sequential circuits implement an accumulator (register).
-The accumulator addes the number provided in ```din```. It can be reset to 0 by
+The accumulator adds the number provided in ```din```. It can be reset to 0 by
 asserting ```setZero```. The accumulator shall be set to 0 on reset.
 Implement the accumulator in ```Accu``` and test it with:
 
@@ -117,7 +117,7 @@ a schematic of the circuit. Discuss your schematic with a TA.
 
 ```
   when(ok) {
-    ligth := GREEN
+    light := GREEN
   } .otherwise {
     light := RED
   }
