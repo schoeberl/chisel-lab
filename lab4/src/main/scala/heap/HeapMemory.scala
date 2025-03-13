@@ -42,6 +42,7 @@ class HeapMemory(params: Heap.Parameters) extends Module {
   val (readRow, readColumn) = split(io.read.index - 1.U)(log2Ceil(k))
   val readValues = VecInit(banks.map(_.read(readRow)))
   io.read.values := readValues
+  io.read.values(0) := readValues(0) + 1.U
   when(RegNext(!io.read.withSiblings)) {
     io.read.values(0) := Mux(RegNext(io.read.index === 0.U), rootReg, readValues(RegNext(readColumn)))
   }

@@ -34,6 +34,16 @@ class HeapTest extends AnyFlatSpec with ChiselScalatestTester {
     }
   }
 
+  it should "not change the stored values" in {
+    // Insert a series of values and remove the root until 
+    // the heap is empty while saving the root values. 
+    // The set of saved values should be the same as the 
+    // set of inserted values.
+    test(new TestHeap) { dut =>
+      // write your test code here
+    }
+  }
+
   it should "assert empty after all numbers have been removed" in {
     test(new TestHeap) { dut =>
       // write your test code here

@@ -44,7 +44,8 @@ class HeapControl(params: Heap.Parameters) extends Module {
 
 
   val tailIndex = sizeReg - 1.U
-  val full = sizeReg === n.U
+  val full = RegInit(0.B)
+  when(sizeReg === n.U) { full := 1.B }
 
   io.req.empty := sizeReg === 0.U
   io.req.full := full

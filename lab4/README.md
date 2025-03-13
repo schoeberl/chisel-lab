@@ -87,13 +87,21 @@ The operation types are referred to using `Operation.Insert` and `Operation.Remo
 dut.io.op.poke(Operation.Insert)
 ```
 
-You can now write test code to verify the correct behavior of the component. More specifically check that the following statements hold:
+You can now write test code to verify the correct behavior of the component. There are two intentional errors added to the dut. One relates to the integrity of the stored values and another relates to the empty/full flags of the dut. You will find the errors by checking that the following statements hold:
 
-* The dut asserts empty after all numbers have been removed
-* The dut asserts full when 8 numbers have been inserted
-* Inserting new values when the dut asserts full does not change the internal sequence
-* The dut deasserts full after a remove operation has finished on a previously full dut
-* A non-empty dut always presents the currently largest number in the sequence on `io.root` when `io.ready` is asserted
+- The dut asserts empty after all numbers have been removed
+- The dut asserts full when 8 numbers have been inserted
+- A non-empty dut always presents the currently largest number in the sequence on `io.root` when `io.ready` is asserted
+- The inserted sequence of values contains the same values as the sequence of values observed on `io.root` when removing the root continuously
+- Inserting new values when the dut asserts full does not change the internal sequence
+- The dut deasserts full after a remove operation has finished on a previously full dut
 
+**Note** that each test runs on a *new* instance of the dut.
+
+### Hints
+
+Once you observe a data integrity error in your tests, take a look at `src/main/scala/heap/HeapMemory.scala` and try to find the error.
+
+Once you observe an issue with the empty/full flags, take a look at `src/main/scala/heap/HeapControl.scala` to find the error.
 
 
