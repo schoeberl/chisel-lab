@@ -274,5 +274,4 @@ permission from the copyright holder.
 
  * No photos and no hand drawings, use a drawing program.
  * No videos
- * No hand drawings of figures, use a drawing program.
  * Maximum size of the report is 2 MB.
