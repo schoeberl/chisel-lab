@@ -128,8 +128,8 @@ Enjoy a job well done! **Show your working design to a TA.**
 
 Assess the resource usage for the ```VendingMachine```.
 Synthesize it separately and check the resource usage reported by Xilinx Vivado.
-How many LUT's and FF's are used? Compare the RTL schematics with your hand designed
-datapath.
+How many LUT's and FF's are used? Compare the RTL schematics with your hand designed datapath.
+What is the maximum clock frequency of your design?
 
 ## Testing the Design
 
@@ -206,7 +206,7 @@ DTU Learn performs a check for plagiarism, and we assume that you are
 aware of DTU's policy on this (see: Studiehaandbog, Regelsamling, afsnit 3.9
 "Snyd ved eksamen og anden bedoemmelse").
 
-**If you want, you are allowed to use the help of ChatGPT to write your report.**
+**If you want, you are allowed to use the help of ChatGPT or other LLMs to write your report.**
 In that case, state in the preface that you used ChatGPT to write/enhance the
 report and cite ChatGPT. You ae still responsible for the text and any
 nonsense that ChatGPT writes.
@@ -225,7 +225,7 @@ The cover page of the report must contain the following information:
 
  1. Number and name of the course:  02139: Digital Electronics 2. (Danish: "02139 Digital elektronik 2").
  2. Title of the report:  Vending Machine Project.   (Danish: "Sodavandsautomat projekt").
- 3. Student id numbers.
+ 3. Student names and id numbers.
 
 The rest of the documents contains:
 
@@ -269,3 +269,9 @@ You are allowed to reuse short passages of text provided that you clearly state 
 
 Figures are generally covered by copyright and can only be used if you obtain
 permission from the copyright holder.
+
+### Additional Rules
+
+ * No photos and no hand drawings, use a drawing program.
+ * No videos
+ * Maximum size of the report is 2 MB.
