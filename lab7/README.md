@@ -42,8 +42,7 @@ following code:
 val uart = Module(new BufferedTx(100000000, 115200))
 ```
 
-The first parameter is the baud rate, the second parameter is the clock
-frequency. The ```BufferedTx``` component has a read/valid interface to
+The first parameter is the clock frequency, the second parameter is the baud rate. The ```BufferedTx``` component has a read/valid interface to
 send characters to the UART.
 
 To see the output of the UART you need to connect it to a terminal program.
