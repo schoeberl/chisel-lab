@@ -72,7 +72,7 @@ Please explain and include any optional design work in your report.
  * Connect a [UART](https://github.com/schoeberl/chisel-book/blob/master/src/main/scala/uart/uart.scala) to your VM and sending messages to your laptop.
  * ... your ideas
 
-The *standard solution* without any optional tasks is considered a
+The *standard solution* without any additional tasks is considered a
 *standard performance*. To obtain a top grade (i.e., 10 or 12)
 you are expected to develop additional features.
 
