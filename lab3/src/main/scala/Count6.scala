@@ -9,7 +9,9 @@ class Count6 extends Module {
 
   // ***** your code starts here *****
 
-  res := 0.U // dummy code to make it compile
+  val cntReg = RegInit(0.U(4.W))
+  cntReg := Mux(cntReg === 6.U, 0.U, cntReg + 1.U)
+  res := cntReg
 
   // ***** your code ends here *****
 

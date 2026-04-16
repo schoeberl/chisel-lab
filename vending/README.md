@@ -59,7 +59,9 @@ and de-asserted multiple times, but it is OK to reset a circuit multiple times.
 
 Later, when you have completed the laboratory exercises according to
 the above specifications and demonstrated your design to a teaching assistant,
-you may want to extend your design. Below is a list of ideas.
+you may want to extend your design.
+Pick two or more extensions for a top grade.
+Below is a list of ideas.
 You may have more ideas.
 Please explain and include any optional design work in your report.
 
