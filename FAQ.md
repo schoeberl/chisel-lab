@@ -54,7 +54,7 @@ Exception in thread "main" ...
 Caused by: (THE REAL ERROR MESSAGE)
     (more indented messages)
 ```
-In the second section of indented messages, you may see links highlighted in blue. These will take you to the portions of your code where the error has occured.
+In the second section of indented messages, you may see links highlighted in blue. These will take you to the portions of your code where the error has occurred.
 
 ### IndexOutOfBoundsException
 Might occur when you're trying to do a sub-field assignment (see above) on a vector. 
